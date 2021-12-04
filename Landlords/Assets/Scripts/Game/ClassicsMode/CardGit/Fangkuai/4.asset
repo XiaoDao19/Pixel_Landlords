@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa962a0eef862a47b5f41a0f435f812, type: 3}
+  m_Name: 4
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 5459612809660418911, guid: 58029ca6e624fd249b160d7f9cbb3846,
+    type: 3}
+  cardTypeName: "\u2666"
+  cardType: {fileID: -1502444030731284833, guid: 90cf5eeb5b7969443aa3d5a0669ce0ec,
+    type: 3}
+  cardNumber: 4
+  cardValue: 4
+  color:
+    serializedVersion: 2
+    rgba: 4278190335
+  indexNumber: 204
+  cardBack: {fileID: 21300000, guid: bdfbd086d56972d498525a727e604eac, type: 3}
