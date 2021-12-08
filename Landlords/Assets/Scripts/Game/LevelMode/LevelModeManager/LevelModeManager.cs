@@ -34,6 +34,8 @@ namespace PIXEL.Landlords.Game.LevelMode
         private static GameObject transitionPanel_First;
         private static GameObject transitionPanel_Second;
         private static GameObject transitionPanel_Third;
+
+        private bool levelIsUp;
         private void Start()
         {
             levelExcelTablePath = Application.streamingAssetsPath + "/Lanlords_Level" + ".xlsx";//一定要加后缀.xlsx，因为他只能读取这个格式的Excel文件
@@ -71,16 +73,16 @@ namespace PIXEL.Landlords.Game.LevelMode
             {
                 levelNumber = PlayerPrefs.GetInt("LevelNumber");
                 ReadLayOutInformations(PlayerPrefs.GetInt("LevelNumber"));
-                levelNumber++;//just test
-                PlayerPrefs.SetInt("LevelNumber", levelNumber);
             }
-            else
-            {
-                PlayerPrefs.SetInt("LevelNumber", levelNumber);
-                ReadLayOutInformations(PlayerPrefs.GetInt("LevelNumber"));
-                levelNumber++;//just test
-                PlayerPrefs.SetInt("LevelNumber", levelNumber);
-            }
+            //else
+            //{
+            //    PlayerPrefs.SetInt("LevelNumber", levelNumber);
+            //    ReadLayOutInformations(PlayerPrefs.GetInt("LevelNumber"));
+            //    levelNumber++;//just test
+            //    PlayerPrefs.SetInt("LevelNumber", levelNumber);
+            //}
+
+            levelIsUp = false;
         }
 
         private void Update()
@@ -88,6 +90,15 @@ namespace PIXEL.Landlords.Game.LevelMode
             if (DealCardManager.Instance.playerHand.childCount == 0)
             {
                 Time.timeScale = 0;
+
+                if (levelIsUp == false)
+                {
+                    levelNumber++;//just test
+                    PlayerPrefs.SetInt("LevelNumber", levelNumber);
+
+                    levelIsUp = true;
+                }
+
                 WinPanel.SetActive(true);
             }
             else

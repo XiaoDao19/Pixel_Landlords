@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using PIXEL.Landlords.FrameWork;
 using PIXEL.Landlords.Card;
-using UnityEngine.Audio;
 using UnityEngine.UI;
-using System.Collections;
+using PIXEL.Landlords.Audio;
 
 namespace PIXEL.Landlords.Game
 {
@@ -58,8 +58,14 @@ namespace PIXEL.Landlords.Game
 
         IEnumerator countDownNumerator;
 
+        [Header("音效播放器")]
+        private AudioSource playerAudioSource;
+
         private void Start()
         {
+            //获取玩家音效播放器
+            playerAudioSource = DealCardManager.Instance.playerHand.gameObject.GetComponent<AudioSource>();
+
             //获取角色出牌桌
             playerTable = GameObject.Find("Table_player").transform;
             aiNo1Table = GameObject.Find("Table_aiNo1").transform;
@@ -117,31 +123,6 @@ namespace PIXEL.Landlords.Game
             aiNo1TipPanel.SetActive(RoundJudgmentManager.Instance.isAiNo1);
 
             aiNo2TipPanel.SetActive(RoundJudgmentManager.Instance.isAiNo2);
-
-            //if (playerTipPanel.activeSelf == true)
-            //{
-            //    if (RoundJudgmentManager.Instance.isPlayer == true)
-            //    {
-            //        if (isStart == false)
-            //        {
-            //            StartCoroutine(CountDown(clock_Player,clockTime));
-            //            isStart = true;
-            //        }
-
-            //        if (clockTime <= 9)
-            //        {
-            //            clock_Player.gameObject.SetActive(true);
-            //        }
-
-            //        if (clockTime == 0)
-            //        {
-            //            PlayerGiveUpPlayCard();
-            //            clock_Player.gameObject.SetActive(false);
-            //            StopCoroutine("CountDown");
-            //            ReSetCountDown();
-            //        }
-            //    }
-            //}
         }
 
         //玩家出牌
@@ -209,6 +190,10 @@ namespace PIXEL.Landlords.Game
                     DealCardManager.Instance.playerHandCards.Remove(playerPlayCardList[i]);
                 }
 
+                AudioManager.PlayCard(playerAudioSource);
+                AudioManager.ManPlayCard(playerAudioSource, playerPlayCardList);
+                DetectLastOneCard();
+
                 RoundJudgmentManager.Instance.GetCurrentTrunCardInfos_For_Player(playerPlayCardList);
 
                 //清理当前回合出牌列表
@@ -236,6 +221,10 @@ namespace PIXEL.Landlords.Game
                     //并将玩家出牌的相应手牌移除
                     DealCardManager.Instance.playerHandCards.Remove(playerPlayCardList[i]);
                 }
+
+                AudioManager.PlayCard(playerAudioSource);
+                AudioManager.ManPlayCard(playerAudioSource, playerPlayCardList);
+                DetectLastOneCard();
 
                 RoundJudgmentManager.Instance.GetCurrentTrunCardInfos_For_Player(playerPlayCardList);
 
@@ -283,6 +272,8 @@ namespace PIXEL.Landlords.Game
                 }
             }
 
+            AudioManager.ManGiveUp(playerAudioSource);
+
             //清理当前回合出牌列表
             playerPlayCardList.Clear();
 
@@ -291,6 +282,14 @@ namespace PIXEL.Landlords.Game
             RoundJudgmentManager.Instance.isAiNo1 = !RoundJudgmentManager.Instance.isAiNo1;
 
             return;
+        }
+
+        private void DetectLastOneCard() 
+        {
+            if (DealCardManager.Instance.playerHandCards.Count == 1)
+            {
+                AudioManager.ChooseCard(playerAudioSource);
+            }
         }
 
         #region AI

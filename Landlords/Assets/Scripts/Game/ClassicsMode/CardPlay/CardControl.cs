@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using PIXEL.Landlords.Game;
+using PIXEL.Landlords.Audio;
 
 namespace PIXEL.Landlords.Card
 {
@@ -8,6 +9,14 @@ namespace PIXEL.Landlords.Card
     {
         [Header("卡牌状态")]
         public bool isSelected;
+
+        [Header("音效播放器")]
+        private AudioSource audioSource;
+
+        private void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -24,7 +33,6 @@ namespace PIXEL.Landlords.Card
 
             GameObject currentCard = eventData.pointerCurrentRaycast.gameObject;
             RectTransform currentCardrectTransform = currentCard.GetComponent<RectTransform>();
-
             //卡牌抬起与放下
             //if (isSelected == false)
             //{
@@ -52,6 +60,8 @@ namespace PIXEL.Landlords.Card
 
             //点击时添加到滑动出牌
             CardOperations.Instance.FirstAddCard(gameObject);
+
+            AudioManager.ChooseCard(audioSource);
         }
        
         public void OnPointerUp(PointerEventData eventData)

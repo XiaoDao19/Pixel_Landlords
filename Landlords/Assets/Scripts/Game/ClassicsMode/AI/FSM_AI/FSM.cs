@@ -14,7 +14,10 @@ namespace PIXEL.Landlords.AI
 
     public class FSM : MonoBehaviour
     {
+        //状态接口
         public Statues statues;
+
+        //字典存储状态和AI状态
         private Dictionary<AIStatues, Statues> AIStatues = new Dictionary<AIStatues, Statues>();
 
         public List<GameObject> handCardGit;//当前AI总牌库
@@ -49,6 +52,9 @@ namespace PIXEL.Landlords.AI
         //临时列表用来承接---AI先手出牌的手牌
         public List<GameObject> temp_AI_First_Hand = new List<GameObject>();
 
+        [Header("AI对应音效播放器")]
+        public AudioSource aiNo1AudioPlayer;
+        public AudioSource aiNo2AudioPlayer;
         void Start()
         {
             //添加状态
@@ -59,6 +65,10 @@ namespace PIXEL.Landlords.AI
             AIStatues.Add(AI.AIStatues.PlayCard, new Statu_PlayCard(this));
             AIStatues.Add(AI.AIStatues.GiveUpPlay, new Statu_GiveUpPlay(this));
             AIStatues.Add(AI.AIStatues.Done, new Statu_Done(this));
+
+            //获取对应ai的音效播放器
+            aiNo1AudioPlayer = DealCardManager.Instance.aiNo1Hand.GetComponent<AudioSource>();
+            aiNo2AudioPlayer = DealCardManager.Instance.aiNo2Hand.GetComponent<AudioSource>();
 
             //将对应AI手牌添加到handCardGit
             if (gameObject.name == "Hand_aiNo1")

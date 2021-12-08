@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using PIXEL.Landlords.Card;
 using PIXEL.Landlords.FrameWork;
 using System.Collections;
+using PIXEL.Landlords.Game.LevelMode;
+using UnityEngine.SceneManagement;
 
 namespace PIXEL.Landlords.Game
 {
@@ -34,7 +36,6 @@ namespace PIXEL.Landlords.Game
 
         [Header("卡背")]
         private GameObject cardBack;
-
         void Start()
         {
             playerHand = GameObject.Find("Hand_player").transform;
@@ -246,10 +247,21 @@ namespace PIXEL.Landlords.Game
             //将AI手中的卡牌翻过来，背面朝上
             if (_table.name != "Hand_player")
             {
-                for (int i = 0; i < _characterHandCards.Count; i++)
+                //如果是关卡模式那么就不翻面
+                if (SceneManager.GetActiveScene().name != "Scene_LevelMode")
                 {
-                    _characterHandCards[i].GetComponent<Image>().sprite = _characterHandCards[i].GetComponent<CardInformations>().CardCurrentSprite;
+                    for (int i = 0; i < _characterHandCards.Count; i++)
+                    {
+                        _characterHandCards[i].GetComponent<Image>().sprite = _characterHandCards[i].GetComponent<CardInformations>().CardCurrentSprite;
+                    }
                 }
+                else
+                {
+                    for (int i = 0; i < _characterHandCards.Count; i++)
+                    {
+                        _characterHandCards[i].GetComponent<Image>().sprite = _characterHandCards[i].GetComponent<CardInformations>().CardInitialSprite;
+                    }
+                }              
             }
             else
             {

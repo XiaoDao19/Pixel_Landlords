@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PIXEL.Landlords.Game;
 using PIXEL.Landlords.Card;
+using PIXEL.Landlords.Audio;
 
 namespace PIXEL.Landlords.AI
 {
@@ -375,6 +376,18 @@ namespace PIXEL.Landlords.AI
         public void OnUpdate()
         {
             fSM.OrderCardsList(fSM.currentTurnAIPlayCard);
+           
+            if (fSM.currentAINumber == 1)
+            {
+                AudioManager.PlayCard(fSM.aiNo1AudioPlayer);
+                AudioManager.WomanPlayCard(fSM.aiNo1AudioPlayer,fSM.currentTurnAIPlayCard);
+            }
+
+            if (fSM.currentAINumber == 2)
+            {
+                AudioManager.PlayCard(fSM.aiNo2AudioPlayer);
+                AudioManager.ManPlayCard(fSM.aiNo2AudioPlayer, fSM.currentTurnAIPlayCard);
+            }
 
             PlayCardManager.Instance.AIPlayCard(fSM.currentAINumber, fSM.currentTurnAIPlayCard);
 
@@ -410,6 +423,16 @@ namespace PIXEL.Landlords.AI
         public void OnUpdate()
         {
             PlayCardManager.Instance.AIGiveUpPlayCard(fSM.currentAINumber);
+
+            if (fSM.currentAINumber == 1)
+            {
+                AudioManager.WomanGiveUp(fSM.aiNo1AudioPlayer);
+            }
+
+            if (fSM.currentAINumber == 2)
+            {
+                AudioManager.ManGiveUp(fSM.aiNo2AudioPlayer);
+            }
 
             fSM.SwitchState(AIStatues.Done);
         }

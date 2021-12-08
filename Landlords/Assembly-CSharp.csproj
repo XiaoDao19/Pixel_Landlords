@@ -102,6 +102,9 @@
     <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioClipsGit.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioClipsProperty.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\FrameWork\SingletonPattern.cs" />
     <Compile Include="Assets\Scripts\Game\ClassicsMode\AI\FSM_AI\CurrentStatu.cs" />
     <Compile Include="Assets\Scripts\Game\ClassicsMode\AI\FSM_AI\FSM.cs" />
@@ -124,6 +127,7 @@
     <Compile Include="Assets\Scripts\Game\LevelMode\ReadExcel\ReadExcelFile.cs" />
     <Compile Include="Assets\Scripts\Game\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonEffect.cs" />
+    <Compile Include="Assets\Scripts\UI\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\UI\UIAnimations.cs" />
     <Compile Include="Assets\test.cs" />
     <Compile Include="Assets\testScreen.cs" />

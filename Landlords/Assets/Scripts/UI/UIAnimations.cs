@@ -9,6 +9,8 @@ namespace PIXEL.Landlords.UI
 
     public static class UIAnimations
     {
+
+        #region 转场动画
         /// <summary>
         /// 分成四种情况，上下左右这四种动画方式
         /// </summary>
@@ -271,5 +273,43 @@ namespace PIXEL.Landlords.UI
                 _currentGameobjectThird.GetComponent<RectTransform>().DOMoveY(1080f + 540f, 0.9f);
             }
         }
+
+        #endregion
+
+        #region 设置面板动画
+
+        //设置面板动画
+        public static void SettingsPanel_Show(GameObject _currentGameobject) 
+        {
+            _currentGameobject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 1920f);
+
+            _currentGameobject.GetComponent<RectTransform>().DOMoveY(540f,0.5f);
+        }
+
+        public static void SettingsPanel_Close(GameObject _currentGameobject)
+        {
+            _currentGameobject.GetComponent<RectTransform>().DOMoveY(1080f + 540f, 0.5f);
+        }
+
+        //设置面板背景渐变动画
+        public static void SettingsPanel_Back_Show(GameObject _currentGameobject) 
+        {
+            _currentGameobject.GetComponent<Image>().raycastTarget = true;
+
+            Color32 currentColor = new Color32(39, 39, 39, 199);
+            _currentGameobject.GetComponent<Image>().DOColor(currentColor, 0.5f);
+        }
+
+        public static void SettingsPanel_Back_Hide(GameObject _currentGameobject)
+        {
+            _currentGameobject.GetComponent<Image>().raycastTarget = false;
+
+            Color32 currentColor = new Color32(39, 39, 39, 1);
+            _currentGameobject.GetComponent<Image>().DOColor(currentColor, 0.5f);
+        }
+
+
+
+        #endregion
     }
 }

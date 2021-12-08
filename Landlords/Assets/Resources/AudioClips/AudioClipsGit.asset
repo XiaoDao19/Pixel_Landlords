@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae314f05335051843bb33477ad49769c, type: 3}
+  m_Name: AudioClipsGit
+  m_EditorClassIdentifier: 
+  man_Single:
+  - {fileID: 8300000, guid: 670d0293ac1527c44898837fe2420589, type: 3}
+  - {fileID: 8300000, guid: a57bf0132437e504682d8f6a4fff3c56, type: 3}
+  - {fileID: 8300000, guid: 2d2c9615ff354994cadd545d32a2126b, type: 3}
+  - {fileID: 8300000, guid: daa8eb1960c5394499bd820595e1eb76, type: 3}
+  - {fileID: 8300000, guid: a396361262dbe6d4189f3ccaefbe138b, type: 3}
+  - {fileID: 8300000, guid: 07916f24987be8240bef7f882eeb849d, type: 3}
+  - {fileID: 8300000, guid: 71cd56682a838844b915bdff05371258, type: 3}
+  - {fileID: 8300000, guid: 37384509ab0672b44a496b1567c49433, type: 3}
+  - {fileID: 8300000, guid: 01736096d72443a47bf684537db78634, type: 3}
+  - {fileID: 8300000, guid: 3906abee6482ad941a82f24b1c47ec18, type: 3}
+  - {fileID: 8300000, guid: 42d7e3a23b389664399157ff2a029d16, type: 3}
+  - {fileID: 8300000, guid: 606005d8c3124ed498a9686b2e090157, type: 3}
+  - {fileID: 8300000, guid: 26236822e2793294ca8d8cccaa2466a9, type: 3}
+  - {fileID: 8300000, guid: d36a6e13d87b18b4dac379ea10b95270, type: 3}
+  - {fileID: 8300000, guid: 135c0886850d4d84da066df0f04f8e2a, type: 3}
+  man_Pair:
+  - {fileID: 8300000, guid: d31dac097ed622d408a443a9b1eb2260, type: 3}
+  - {fileID: 8300000, guid: 40cb13ae5c103c845889402ce9acbef7, type: 3}
+  - {fileID: 8300000, guid: 9329c363c116e8143a908809f1ae5504, type: 3}
+  - {fileID: 8300000, guid: a29a431287039054cb0f75efb48fd6d5, type: 3}
+  - {fileID: 8300000, guid: b1be1283bdc51a64f90d5681667694c7, type: 3}
+  - {fileID: 8300000, guid: 37f0e7ca953dc604f9740a7d841dc273, type: 3}
+  - {fileID: 8300000, guid: cb98961cece909b4bbf1377627596d82, type: 3}
+  - {fileID: 8300000, guid: b4784c7c6a66e7a44812f6e253a4a3e7, type: 3}
+  - {fileID: 8300000, guid: 0123ca72f05e23d4797ea927e25c5632, type: 3}
+  - {fileID: 8300000, guid: 0c8d61a12c347054fa48673a80dd3ffc, type: 3}
+  - {fileID: 8300000, guid: c10870a2d02076d4a9a50d75baf9bbce, type: 3}
+  - {fileID: 8300000, guid: 9d2434da59f8ea949b06722e8cc5e149, type: 3}
+  - {fileID: 8300000, guid: b007d14e8114a9641a3f5927fef3b884, type: 3}
+  man_Triple:
+  - {fileID: 8300000, guid: 2eadaaa2b26b3ae499bc82c01284d5af, type: 3}
+  - {fileID: 8300000, guid: 1a9bf9595e880a34eb5097d2d1e0d755, type: 3}
+  - {fileID: 8300000, guid: 2775f45ea3c509d4491c61d77313b909, type: 3}
+  - {fileID: 8300000, guid: e7378dbc261864e48a15b284b64769e3, type: 3}
+  - {fileID: 8300000, guid: f2d1b96860454134cbcfdda5392daf67, type: 3}
+  - {fileID: 8300000, guid: c21885a72637f5440973f847688399be, type: 3}
+  - {fileID: 8300000, guid: 3740a500dc2b72a458a5ca26034ebf96, type: 3}
+  - {fileID: 8300000, guid: afcda017202cd024aad4882becdd385a, type: 3}
+  - {fileID: 8300000, guid: 5310fa151e94c25478045b41f587c24c, type: 3}
+  - {fileID: 8300000, guid: f7b76e91074b0d346810dcb0260e1073, type: 3}
+  - {fileID: 8300000, guid: 4e5b0af63119ae849b3777ae9bfa1d22, type: 3}
+  - {fileID: 8300000, guid: 7254d67452191ff479ba91ba7b947095, type: 3}
+  - {fileID: 8300000, guid: 72bb161d8f84277408e417d9047f49fb, type: 3}
+  man_SpecialCardCombination:
+  - {fileID: 8300000, guid: 6e503ad180e759d49820ae296fb0fb4d, type: 3}
+  - {fileID: 8300000, guid: b995014aeee57734a86bb0a2e5c62afa, type: 3}
+  - {fileID: 8300000, guid: 380f3c81ee11e06429ec52fe13630435, type: 3}
+  - {fileID: 8300000, guid: ecef6be5067e074408665bb9201140aa, type: 3}
+  - {fileID: 8300000, guid: a2a788627b034d644ae9b98c7211605a, type: 3}
+  - {fileID: 8300000, guid: 4f2fc18a2466b0b40ad2741c7c551353, type: 3}
+  - {fileID: 8300000, guid: 7c83006e0f5d90d49b8201f51e825f22, type: 3}
+  - {fileID: 8300000, guid: 37fa7e9beb5db69499877204765b01c3, type: 3}
+  - {fileID: 8300000, guid: 890960316ff330b40986d19bf109bbfc, type: 3}
+  man_Others:
+  - {fileID: 8300000, guid: 33e41335ce429df48b8f75e47668cec2, type: 3}
+  - {fileID: 8300000, guid: 97e068cb606f2a24d8fb782662684d82, type: 3}
+  - {fileID: 8300000, guid: a629dcfd5ca34b24f8801cfe7b1d3373, type: 3}
+  - {fileID: 8300000, guid: 6855485880ca1d74ebf2f4c9638c7049, type: 3}
+  women_Single:
+  - {fileID: 8300000, guid: ff8de17bc2da2f84bb5713b73e8ef6fb, type: 3}
+  - {fileID: 8300000, guid: a0fb60f3d782e6f4193748d7ff1696db, type: 3}
+  - {fileID: 8300000, guid: 2cf6c6f108fcf394e914d9caf3ef87ca, type: 3}
+  - {fileID: 8300000, guid: 0feeb1d72ab369947b8a8fe561a3ff55, type: 3}
+  - {fileID: 8300000, guid: 4030be1b3f4830542b71ba7ca3465c8e, type: 3}
+  - {fileID: 8300000, guid: 37df5cd595394aa408f0cbf20ffcccf6, type: 3}
+  - {fileID: 8300000, guid: 3e430091a6c68124a9a315e65adab9bd, type: 3}
+  - {fileID: 8300000, guid: fe1ca061ced710140b0b527c314b2c88, type: 3}
+  - {fileID: 8300000, guid: 7681adc651bee7049928ee0ccc4fba7e, type: 3}
+  - {fileID: 8300000, guid: 35ca4d9a46c198e49949a8909a2800ed, type: 3}
+  - {fileID: 8300000, guid: ccba5db2f636c0c4cad4bd591c1363a6, type: 3}
+  - {fileID: 8300000, guid: 0d5afb7f5a053b1469661ffafe85faf1, type: 3}
+  - {fileID: 8300000, guid: f3f0133d5a61a0647aa80090c881f6e3, type: 3}
+  - {fileID: 8300000, guid: 2916f71b2b74a5c4c824829d95d611be, type: 3}
+  - {fileID: 8300000, guid: 46c7042f4bc6c514cad09bf77f4c0774, type: 3}
+  women_Pair:
+  - {fileID: 8300000, guid: dc49e112ab839384b9a4ee98d438f543, type: 3}
+  - {fileID: 8300000, guid: 3f07456b16a6c8f44a97309e4978ed39, type: 3}
+  - {fileID: 8300000, guid: 7b00247a514b36e41b2b64a27bb44045, type: 3}
+  - {fileID: 8300000, guid: 2e2d2e5002b9ca747b9fe8bc5e3591a1, type: 3}
+  - {fileID: 8300000, guid: 4e50485757b9c3b48963a4116217f5e1, type: 3}
+  - {fileID: 8300000, guid: 8f166f525b9008341a8bd0d52eca55eb, type: 3}
+  - {fileID: 8300000, guid: a3676ee92014d54498df416eacf83d3f, type: 3}
+  - {fileID: 8300000, guid: 30c3122c5c7d07944988539851b0ce16, type: 3}
+  - {fileID: 8300000, guid: 6e5eb864c995fb74aa52e2f0dae716dd, type: 3}
+  - {fileID: 8300000, guid: 25b32a6655d0a5348a0aeebcaf4ca5bb, type: 3}
+  - {fileID: 8300000, guid: 97e1e870f30efc043b2eda0b3ca74f78, type: 3}
+  - {fileID: 8300000, guid: 8e44353c8d277fb48957a5db1dfa5faf, type: 3}
+  - {fileID: 8300000, guid: af7da49465aef56448a2a4e3ed979ad7, type: 3}
+  women_Triple:
+  - {fileID: 8300000, guid: b27e2c3e8064ce3489ac120ba20d1144, type: 3}
+  - {fileID: 8300000, guid: c2c05f309a8af944a979be3e69b5aa52, type: 3}
+  - {fileID: 8300000, guid: 8b1ae4521b12f9248b226e84b1d6f9f9, type: 3}
+  - {fileID: 8300000, guid: 9729bda112e61c84a9c498701891d9f4, type: 3}
+  - {fileID: 8300000, guid: 8c9e0e3f476cdab479a0f7c6dfbe23dd, type: 3}
+  - {fileID: 8300000, guid: 78757ec2ddd0eed47858d3b1777c42e5, type: 3}
+  - {fileID: 8300000, guid: b4eddd51943dea040bca534a8e4cd222, type: 3}
+  - {fileID: 8300000, guid: 69f2f6de2f2d90d49827d9db027f26a8, type: 3}
+  - {fileID: 8300000, guid: fc18f196433704e4c94fa4e6db270d81, type: 3}
+  - {fileID: 8300000, guid: bf1e333dc8585d64796166f15cb13afe, type: 3}
+  - {fileID: 8300000, guid: 8edf4bc6a67a982419f4afe469a02c2a, type: 3}
+  - {fileID: 8300000, guid: 215126d7616171f4f80eed4e4e78fc82, type: 3}
+  - {fileID: 8300000, guid: c5eebfcb435aa404396bf05ac5256ec9, type: 3}
+  women_SpecialCardCombination:
+  - {fileID: 8300000, guid: 89d0bf01ed93de34bb4cb3548c4032d8, type: 3}
+  - {fileID: 8300000, guid: 0150aecc2f371434bad6c040290452a0, type: 3}
+  - {fileID: 8300000, guid: d10317b11e04fa046905a4a23bc181de, type: 3}
+  - {fileID: 8300000, guid: 209a6e66662b01c4aab31aab21e3120a, type: 3}
+  - {fileID: 8300000, guid: 4796a9bb7b710e54395c73d99267a8ec, type: 3}
+  - {fileID: 8300000, guid: 216f07d8ef2e7be478970619eeacff01, type: 3}
+  - {fileID: 8300000, guid: c912fb832254c304dbd425a32991596f, type: 3}
+  - {fileID: 8300000, guid: 7bbc477545ee2ad4993c6ebd9f5a46c9, type: 3}
+  - {fileID: 8300000, guid: 05718a03ee8b10e46b8975374d492d7a, type: 3}
+  women_Others:
+  - {fileID: 8300000, guid: c07dee3422a79f74fb3ff49401b8db8f, type: 3}
+  - {fileID: 8300000, guid: b370a938b8fe9974bb422534679c7266, type: 3}
+  - {fileID: 8300000, guid: e8186f011eef66241bc0986e27e258ce, type: 3}
+  - {fileID: 8300000, guid: be67d7565b91f1d40b034cf70a423f55, type: 3}
+  generalAudioClips:
+  - {fileID: 8300000, guid: 9eba15997d942774f868351608a2fc9b, type: 3}
+  - {fileID: 8300000, guid: d522113f3859b044cb11602109cd0537, type: 3}
+  - {fileID: 8300000, guid: 52e76db4452f51f488c62d2e7ff48fb7, type: 3}
+  - {fileID: 8300000, guid: 1878a94ad45845940ae775e56908ef66, type: 3}
+  - {fileID: 8300000, guid: 626ce24fcf6a24a4f9a2bbebaf47611c, type: 3}
+  - {fileID: 8300000, guid: 30e5f4882d44752439b1cd1d01a3102c, type: 3}
+  - {fileID: 8300000, guid: f35684b0f1ee9ed47bc79f1aa138a34d, type: 3}
+  - {fileID: 8300000, guid: 022cacded9c5ec14dadb2f2483d6d179, type: 3}
+  backGroundMusic:
+  - {fileID: 8300000, guid: 835322161a1bdf742b73ac03e82bd4d8, type: 3}
+  - {fileID: 8300000, guid: adb3897cce302474dae31142c160c751, type: 3}
+  - {fileID: 8300000, guid: b5c38d0f4880bfb4f87926345424079f, type: 3}
