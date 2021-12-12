@@ -63,20 +63,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\AntialiasingEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\BloomEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\CreaseShadingEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\DepthOfFieldEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\EdgeDetectionEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\TonemappingEditor.cs" />
-    <Compile Include="Assets\Assets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\AntialiasingEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\BloomEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\CreaseShadingEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\DepthOfFieldEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\EdgeDetectionEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\NoiseAndGrainEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\TonemappingEditor.cs" />
+    <Compile Include="Assets\ArtAssets\UI\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>E:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -281,14 +281,14 @@
     <Reference Include="DOTweenEditor">
       <HintPath>E:/Unity Project/Landlords/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus">
-      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcelPlugins/EPPlus.dll</HintPath>
-    </Reference>
     <Reference Include="Excel">
-      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcelPlugins/Excel.dll</HintPath>
+      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcel/Excel.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcelPlugins/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcel/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcel/System.Data.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>E:/Unity Project/Landlords/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>

@@ -153,6 +153,7 @@ namespace PIXEL.Landlords.Audio
         public static AudioClip general_Lose = clipsProperty.generalAudioClips[7];
 
         //-----------------------------------------------------------------------
+
         [Header("背景音乐")]
         public static AudioClip bgm_1 = clipsProperty.backGroundMusic[0];
         public static AudioClip bgm_2 = clipsProperty.backGroundMusic[1];

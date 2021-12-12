@@ -447,7 +447,7 @@ namespace PIXEL.Landlords.AI
     public class Statu_Done : Statues
     {
         private FSM fSM;
-
+        private float turnChangeWaitTime = 0f;
         public Statu_Done(FSM fSM)
         {
             this.fSM = fSM;
@@ -455,24 +455,32 @@ namespace PIXEL.Landlords.AI
 
         public void OnEnter()
         {
-            
+            turnChangeWaitTime = 0.3f;
         }
 
         public void OnUpdate()
         {
-            switch (fSM.currentAINumber)
+            if (turnChangeWaitTime > 0f)
             {
-                case 1:
-                    RoundJudgmentManager.Instance.isAiNo1 = !RoundJudgmentManager.Instance.isAiNo1;
-                    RoundJudgmentManager.Instance.isAiNo2 = !RoundJudgmentManager.Instance.isAiNo2;
-                    break;
-                case 2:
-                    RoundJudgmentManager.Instance.isAiNo2 = !RoundJudgmentManager.Instance.isAiNo2;
-                    RoundJudgmentManager.Instance.isPlayer = !RoundJudgmentManager.Instance.isPlayer;
-                    break;
+                turnChangeWaitTime -= Time.deltaTime;
+                return;
             }
+            else
+            {
+                switch (fSM.currentAINumber)
+                {
+                    case 1:
+                        RoundJudgmentManager.Instance.isAiNo1 = !RoundJudgmentManager.Instance.isAiNo1;
+                        RoundJudgmentManager.Instance.isAiNo2 = !RoundJudgmentManager.Instance.isAiNo2;
+                        break;
+                    case 2:
+                        RoundJudgmentManager.Instance.isAiNo2 = !RoundJudgmentManager.Instance.isAiNo2;
+                        RoundJudgmentManager.Instance.isPlayer = !RoundJudgmentManager.Instance.isPlayer;
+                        break;
+                }
 
-            fSM.SwitchState(AIStatues.Standby);
+                fSM.SwitchState(AIStatues.Standby);
+            }
         }
 
         public void OnExit()

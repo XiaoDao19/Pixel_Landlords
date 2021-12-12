@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using PIXEL.Landlords.Card;
 using PIXEL.Landlords.UI;
+using PIXEL.Landlords.AI;
 
 namespace PIXEL.Landlords.Game
 {
@@ -64,6 +65,9 @@ namespace PIXEL.Landlords.Game
                     DealCardManager.Instance.aiNo2Hand.GetChild(i).GetComponent<Image>().sprite = DealCardManager.Instance.aiNo2Hand.GetChild(i).GetComponent<CardInformations>().CardInitialSprite;
                 }
 
+                DealCardManager.Instance.aiNo1Hand.GetComponent<FSM>().enabled = false;
+                DealCardManager.Instance.aiNo2Hand.GetComponent<FSM>().enabled = false;
+
                 return;
             }
 
@@ -77,6 +81,9 @@ namespace PIXEL.Landlords.Game
                     DealCardManager.Instance.aiNo2Hand.GetChild(i).GetComponent<Image>().sprite = DealCardManager.Instance.aiNo2Hand.GetChild(i).GetComponent<CardInformations>().CardInitialSprite;
                 }
 
+                DealCardManager.Instance.aiNo1Hand.GetComponent<FSM>().enabled = false;
+                DealCardManager.Instance.aiNo2Hand.GetComponent<FSM>().enabled = false;
+
                 return;
             }
 
@@ -89,6 +96,9 @@ namespace PIXEL.Landlords.Game
                 {
                     DealCardManager.Instance.aiNo1Hand.GetChild(i).GetComponent<Image>().sprite = DealCardManager.Instance.aiNo1Hand.GetChild(i).GetComponent<CardInformations>().CardInitialSprite;
                 }
+
+                DealCardManager.Instance.aiNo1Hand.GetComponent<FSM>().enabled = false;
+                DealCardManager.Instance.aiNo2Hand.GetComponent<FSM>().enabled = false;
 
                 return;
             }

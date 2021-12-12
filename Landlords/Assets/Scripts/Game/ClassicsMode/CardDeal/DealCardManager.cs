@@ -6,6 +6,7 @@ using PIXEL.Landlords.FrameWork;
 using System.Collections;
 using PIXEL.Landlords.Game.LevelMode;
 using UnityEngine.SceneManagement;
+using PIXEL.Landlords.Audio;
 
 namespace PIXEL.Landlords.Game
 {
@@ -58,7 +59,7 @@ namespace PIXEL.Landlords.Game
 
             if (PlayerPrefs.GetInt("ClassicsMode") == 1)
             {
-                DealCardManager.Instance.ClassicModeOn();
+                ClassicModeOn();
             }           
         }
 
@@ -296,11 +297,21 @@ namespace PIXEL.Landlords.Game
         //发牌动画携程
         private IEnumerator PlayCard(Transform _targetTable) 
         {
+            //发牌时播放音效
+            AudioSource currentAudioSource = GetComponent<AudioSource>();
+            AudioManager.DealCard(currentAudioSource);
+
             for (int i = 0; i < _targetTable.childCount; i++)
             {
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.22f);
 
                 _targetTable.GetChild(i).gameObject.SetActive(true);
+                
+                //牌发完了就停止
+                if (i == _targetTable.childCount - 1)
+                {
+                    currentAudioSource.Stop();
+                }
             }
         }
     }

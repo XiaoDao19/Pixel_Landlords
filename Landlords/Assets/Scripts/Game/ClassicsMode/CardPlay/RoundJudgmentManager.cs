@@ -92,28 +92,6 @@ namespace PIXEL.Landlords.Game
                 tempPoints += _targetCardList[i].gameObject.GetComponent<CardInformations>().CardValue;
             }
 
-            //int fakeTempPoints = tempPoints;
-
-            //if (tempPlayeCardType == PlayCardType.JokerBoom)
-            //{
-            //    fakeTempPoints = fakeTempPoints * 10000;
-            //}
-
-            //if (tempPlayeCardType == PlayCardType.Boom)
-            //{
-            //    fakeTempPoints = fakeTempPoints * 1000;
-            //}
-
-            //if (tempPlayeCardType == PlayCardType.Boom_pair)
-            //{
-            //    fakeTempPoints = fakeTempPoints * 100;
-            //}
-
-            //if (tempPlayeCardType == PlayCardType.Boom_single)
-            //{
-            //    fakeTempPoints = fakeTempPoints * 100;
-            //}
-
             if (currentRoundCardType == PlayCardType.None)
             {
                 Debug.Log("Current Turn Is None");
@@ -272,7 +250,6 @@ namespace PIXEL.Landlords.Game
                 if (PlayCardTypeJudgmentManager.PlayCardTypeJudge(_targetCardList) == PlayCardType.Boom ||
                     PlayCardTypeJudgmentManager.PlayCardTypeJudge(_targetCardList) == PlayCardType.JokerBoom)
                 {
-                    Debug.Log(1);
                     return true;
                 }
             }

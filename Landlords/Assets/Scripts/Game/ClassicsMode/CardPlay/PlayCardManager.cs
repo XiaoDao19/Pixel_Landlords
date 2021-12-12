@@ -5,6 +5,7 @@ using PIXEL.Landlords.FrameWork;
 using PIXEL.Landlords.Card;
 using UnityEngine.UI;
 using PIXEL.Landlords.Audio;
+using PIXEL.Landlords.Animation.SpecialCardAnimations;
 
 namespace PIXEL.Landlords.Game
 {
@@ -61,6 +62,8 @@ namespace PIXEL.Landlords.Game
         [Header("音效播放器")]
         private AudioSource playerAudioSource;
 
+        [Header("卡牌回收父物体")]
+        private GameObject cardsRecycleBin;
         private void Start()
         {
             //获取玩家音效播放器
@@ -75,6 +78,9 @@ namespace PIXEL.Landlords.Game
             playerTipPanel = GameObject.Find("Tip_Player");
             aiNo1TipPanel = GameObject.Find("Tip_AINo1");
             aiNo2TipPanel = GameObject.Find("Tip_AINo2");
+
+            //获取卡牌回收父物体
+            cardsRecycleBin = GameObject.Find("CardsRecycleBin");
 
             //获取按钮
             button_Play = playerTipPanel.transform.GetChild(0).GetComponent<Button>();
@@ -112,6 +118,12 @@ namespace PIXEL.Landlords.Game
             number_2 = Resources.Load(path + 2.ToString()) as GameObject;
             number_1 = Resources.Load(path + 1.ToString()) as GameObject;
             number_0 = Resources.Load(path + 0.ToString()) as GameObject;
+
+            //销毁卡牌回收父物体的所有卡牌
+            for (int i = 0; i < cardsRecycleBin.transform.childCount; i++)
+            {
+                Destroy(cardsRecycleBin.transform.GetChild(i).gameObject);
+            }
         }
 
         private void Update()
@@ -125,6 +137,7 @@ namespace PIXEL.Landlords.Game
             aiNo2TipPanel.SetActive(RoundJudgmentManager.Instance.isAiNo2);
         }
 
+        #region Player
         //玩家出牌
         private void PlayerPlay() 
         {
@@ -137,9 +150,9 @@ namespace PIXEL.Landlords.Game
             //判断当前玩家出牌桌上是否有牌，若有则将它们清理掉
             if (playerTable.childCount != 0)
             {
-                for (int i = 0; i < playerTable.childCount; i++)
+                for (int i = playerTable.childCount - 1; i >= 0 ; i--)
                 {
-                    Destroy(playerTable.GetChild(i).gameObject);
+                    CardRecycle(playerTable.GetChild(i).gameObject, cardsRecycleBin);
                 }
             }
 
@@ -193,6 +206,7 @@ namespace PIXEL.Landlords.Game
                 AudioManager.PlayCard(playerAudioSource);
                 AudioManager.ManPlayCard(playerAudioSource, playerPlayCardList);
                 DetectLastOneCard();
+                SpecialCardCombinationsAnimations.Instance.ShowAnimations("Player", PlayCardTypeJudgmentManager.PlayCardTypeJudge(playerPlayCardList));
 
                 RoundJudgmentManager.Instance.GetCurrentTrunCardInfos_For_Player(playerPlayCardList);
 
@@ -200,8 +214,7 @@ namespace PIXEL.Landlords.Game
                 playerPlayCardList.Clear();
 
                 //过渡玩家回合
-                RoundJudgmentManager.Instance.isPlayer = !RoundJudgmentManager.Instance.isPlayer;
-                RoundJudgmentManager.Instance.isAiNo1 = !RoundJudgmentManager.Instance.isAiNo1;
+                Invoke("TurnChange", 0.3f);
 
                 countDownNumerator = CountDown(clock_Player, clockTime);
                 StopCoroutine(countDownNumerator);
@@ -225,6 +238,7 @@ namespace PIXEL.Landlords.Game
                 AudioManager.PlayCard(playerAudioSource);
                 AudioManager.ManPlayCard(playerAudioSource, playerPlayCardList);
                 DetectLastOneCard();
+                SpecialCardCombinationsAnimations.Instance.ShowAnimations("Player", PlayCardTypeJudgmentManager.PlayCardTypeJudge(playerPlayCardList));
 
                 RoundJudgmentManager.Instance.GetCurrentTrunCardInfos_For_Player(playerPlayCardList);
 
@@ -232,8 +246,7 @@ namespace PIXEL.Landlords.Game
                 playerPlayCardList.Clear();
 
                 //过渡玩家回合
-                RoundJudgmentManager.Instance.isPlayer = !RoundJudgmentManager.Instance.isPlayer;
-                RoundJudgmentManager.Instance.isAiNo1 = !RoundJudgmentManager.Instance.isAiNo1;
+                Invoke("TurnChange", 0.3f);
 
                 countDownNumerator = CountDown(clock_Player, clockTime);
                 StopCoroutine(countDownNumerator);
@@ -266,9 +279,9 @@ namespace PIXEL.Landlords.Game
 
             if (playerTable.childCount != 0)
             {
-                for (int i = 0; i < playerTable.childCount; i++)
+                for (int i = playerTable.childCount - 1; i >= 0; i--)
                 {
-                    Destroy(playerTable.GetChild(i).gameObject);
+                    CardRecycle(playerTable.GetChild(i).gameObject, cardsRecycleBin);
                 }
             }
 
@@ -278,12 +291,12 @@ namespace PIXEL.Landlords.Game
             playerPlayCardList.Clear();
 
             //过渡玩家回合
-            RoundJudgmentManager.Instance.isPlayer = !RoundJudgmentManager.Instance.isPlayer;
-            RoundJudgmentManager.Instance.isAiNo1 = !RoundJudgmentManager.Instance.isAiNo1;
+            Invoke("TurnChange", 0.3f);
 
             return;
         }
 
+        //判断是否是最后一张牌
         private void DetectLastOneCard() 
         {
             if (DealCardManager.Instance.playerHandCards.Count == 1)
@@ -291,6 +304,7 @@ namespace PIXEL.Landlords.Game
                 AudioManager.ChooseCard(playerAudioSource);
             }
         }
+        #endregion
 
         #region AI
 
@@ -300,33 +314,35 @@ namespace PIXEL.Landlords.Game
             switch (_AINumber)
             {
                 case 1:
-                    AIPlayeCard(_AIPlayCardList, aiNo1Table);
+                    AIPlayeCard(_AIPlayCardList, aiNo1Table,"AI_1");
                     break;
                 case 2:
-                    AIPlayeCard(_AIPlayCardList, aiNo2Table);
+                    AIPlayeCard(_AIPlayCardList, aiNo2Table, "AI_2");
                     break;
             }
         }
 
         //重写AI出牌，作用将当前AI出的牌，打出
-        private void AIPlayeCard(List<GameObject> _AIPlayCardList,Transform _AITable) 
+        private void AIPlayeCard(List<GameObject> _AIPlayCardList,Transform _AITable,string _currentAI) 
         {
             //判断当前AI出牌桌上是否有牌，若有则将它们清理掉
             if (_AITable.childCount != 0)
             {
-                for (int i = 0; i < _AITable.childCount; i++)
+                for (int i = _AITable.childCount - 1; i >= 0 ; i--)
                 {
-                    Destroy(_AITable.GetChild(i).gameObject);
+                    CardRecycle(_AITable.GetChild(i).gameObject, cardsRecycleBin);
                 }
             }
 
-            //满足出牌条件后，出牌
+            //出牌
             for (int i = 0; i < _AIPlayCardList.Count; i++)
             {
                 _AIPlayCardList[i].GetComponent<Image>().sprite = _AIPlayCardList[i].GetComponent<CardInformations>().CardInitialSprite;
                 _AIPlayCardList[i].transform.SetParent(_AITable);
                 _AIPlayCardList[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
+
+            SpecialCardCombinationsAnimations.Instance.ShowAnimations(_currentAI, PlayCardTypeJudgmentManager.PlayCardTypeJudge(_AIPlayCardList));
 
             RoundJudgmentManager.Instance.GetCurrentTrunCardInfos_For_AI(_AIPlayCardList);
         }
@@ -350,14 +366,29 @@ namespace PIXEL.Landlords.Game
         {
             if (_AITable.childCount != 0)
             {
-                for (int i = 0; i < _AITable.childCount; i++)
+                for (int i = _AITable.childCount - 1; i >= 0 ; i--)
                 {
-                    Destroy(_AITable.GetChild(i).gameObject);
+                    CardRecycle(_AITable.GetChild(i).gameObject, cardsRecycleBin);
                 }
             }
         }
 
         #endregion
+
+        //回合过渡
+        private void TurnChange() 
+        {
+            RoundJudgmentManager.Instance.isPlayer = !RoundJudgmentManager.Instance.isPlayer;
+            RoundJudgmentManager.Instance.isAiNo1 = !RoundJudgmentManager.Instance.isAiNo1;
+        }
+
+        //卡牌回收
+        private void CardRecycle(GameObject _currentCard,GameObject _cardRecycleBin) 
+        {
+            _currentCard.SetActive(false);
+            _currentCard.transform.SetParent(_cardRecycleBin.transform);
+            _currentCard.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        }
 
         /// <summary>
         /// 测试倒计时功能
@@ -365,7 +396,6 @@ namespace PIXEL.Landlords.Game
         /// <param name="_targetClock"></param>
         /// <param name="_countDownTime"></param>
         /// <returns></returns>
-
         //出牌倒计时
         public IEnumerator CountDown(Image _targetClock,float _countDownTime)
         {

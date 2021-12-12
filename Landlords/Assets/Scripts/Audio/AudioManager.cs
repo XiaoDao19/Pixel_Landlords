@@ -31,7 +31,6 @@ namespace PIXEL.Landlords.Audio
             {
                 if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103)
                 {
-                    Debug.Log("Single");
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_3);
                 }
 

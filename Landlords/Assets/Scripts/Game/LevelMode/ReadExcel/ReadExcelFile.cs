@@ -38,7 +38,7 @@ namespace PIXEL.Landlords.Game.LevelMode
         private static DataRowCollection ReadExcelFiles(string _filePath, ref int _columnCounts, ref int _rowCounts)
         {
             //创建文件流，打开Excel文件
-            FileStream fileStream = File.Open(_filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            FileStream fileStream = File.Open(_filePath, FileMode.Open, FileAccess.Read);
 
             //创建Excel文件读取器
             IExcelDataReader excelDataReader = ExcelReaderFactory.CreateOpenXmlReader(fileStream);

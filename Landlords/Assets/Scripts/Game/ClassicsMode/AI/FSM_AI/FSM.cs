@@ -717,350 +717,29 @@ namespace PIXEL.Landlords.AI
                 }
             }
 
-            //for (int i = singleList.Count - 1; i >= 0; i--)
-            //{
-            //    if (tripleList.Contains(singleList[i]) == true)
-            //    {
-            //        tripleList.Remove(singleList[i]);
-            //    }
-            //}
-
-
-            //同样，这里也要分类写
-            //1，10个连对，20张牌
-            if (pairList.Count >= 20)
-            {
-                for (int i = 0; i < pairList.Count - 18; i += 2)
-                {
-                    if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 12].GetComponent<CardInformations>().CardValue - pairList[i + 14].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 13].GetComponent<CardInformations>().CardValue - pairList[i + 15].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 14].GetComponent<CardInformations>().CardValue - pairList[i + 16].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 15].GetComponent<CardInformations>().CardValue - pairList[i + 17].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 16].GetComponent<CardInformations>().CardValue - pairList[i + 18].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 17].GetComponent<CardInformations>().CardValue - pairList[i + 19].GetComponent<CardInformations>().CardValue == -1)
-                    {
-                        temp_AI_First_Hand.Add(pairList[i]);
-                        temp_AI_First_Hand.Add(pairList[i + 1]);
-                        temp_AI_First_Hand.Add(pairList[i + 2]);
-                        temp_AI_First_Hand.Add(pairList[i + 3]);
-                        temp_AI_First_Hand.Add(pairList[i + 4]);
-                        temp_AI_First_Hand.Add(pairList[i + 5]);
-                        temp_AI_First_Hand.Add(pairList[i + 6]);
-                        temp_AI_First_Hand.Add(pairList[i + 7]);
-                        temp_AI_First_Hand.Add(pairList[i + 8]);
-                        temp_AI_First_Hand.Add(pairList[i + 9]);
-                        temp_AI_First_Hand.Add(pairList[i + 10]);
-                        temp_AI_First_Hand.Add(pairList[i + 11]);
-                        temp_AI_First_Hand.Add(pairList[i + 12]);
-                        temp_AI_First_Hand.Add(pairList[i + 13]);
-                        temp_AI_First_Hand.Add(pairList[i + 14]);
-                        temp_AI_First_Hand.Add(pairList[i + 15]);
-                        temp_AI_First_Hand.Add(pairList[i + 16]);
-                        temp_AI_First_Hand.Add(pairList[i + 17]);
-                        temp_AI_First_Hand.Add(pairList[i + 18]);
-                        temp_AI_First_Hand.Add(pairList[i + 19]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0 ; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
-                    }
-                }
-            }
-
-            //2，9个连对，18张牌
-            if (pairList.Count >= 18)
-            {
-                for (int i = 0; i < pairList.Count - 16; i += 2)
-                {
-                    if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 12].GetComponent<CardInformations>().CardValue - pairList[i + 14].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 13].GetComponent<CardInformations>().CardValue - pairList[i + 15].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 14].GetComponent<CardInformations>().CardValue - pairList[i + 16].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 15].GetComponent<CardInformations>().CardValue - pairList[i + 17].GetComponent<CardInformations>().CardValue == -1)
-                    {
-                        temp_AI_First_Hand.Add(pairList[i]);
-                        temp_AI_First_Hand.Add(pairList[i + 1]);
-                        temp_AI_First_Hand.Add(pairList[i + 2]);
-                        temp_AI_First_Hand.Add(pairList[i + 3]);
-                        temp_AI_First_Hand.Add(pairList[i + 4]);
-                        temp_AI_First_Hand.Add(pairList[i + 5]);
-                        temp_AI_First_Hand.Add(pairList[i + 6]);
-                        temp_AI_First_Hand.Add(pairList[i + 7]);
-                        temp_AI_First_Hand.Add(pairList[i + 8]);
-                        temp_AI_First_Hand.Add(pairList[i + 9]);
-                        temp_AI_First_Hand.Add(pairList[i + 10]);
-                        temp_AI_First_Hand.Add(pairList[i + 11]);
-                        temp_AI_First_Hand.Add(pairList[i + 12]);
-                        temp_AI_First_Hand.Add(pairList[i + 13]);
-                        temp_AI_First_Hand.Add(pairList[i + 14]);
-                        temp_AI_First_Hand.Add(pairList[i + 15]);
-                        temp_AI_First_Hand.Add(pairList[i + 16]);
-                        temp_AI_First_Hand.Add(pairList[i + 17]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
-                    }
-                }
-            }
-
-            //3，8个连对，16张牌
-            if (pairList.Count >= 16)
-            {
-                for (int i = 0; i < pairList.Count - 14; i += 2)
-                {
-                    if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 12].GetComponent<CardInformations>().CardValue - pairList[i + 14].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 13].GetComponent<CardInformations>().CardValue - pairList[i + 15].GetComponent<CardInformations>().CardValue == -1)
-                    {
-                        temp_AI_First_Hand.Add(pairList[i]);
-                        temp_AI_First_Hand.Add(pairList[i + 1]);
-                        temp_AI_First_Hand.Add(pairList[i + 2]);
-                        temp_AI_First_Hand.Add(pairList[i + 3]);
-                        temp_AI_First_Hand.Add(pairList[i + 4]);
-                        temp_AI_First_Hand.Add(pairList[i + 5]);
-                        temp_AI_First_Hand.Add(pairList[i + 6]);
-                        temp_AI_First_Hand.Add(pairList[i + 7]);
-                        temp_AI_First_Hand.Add(pairList[i + 8]);
-                        temp_AI_First_Hand.Add(pairList[i + 9]);
-                        temp_AI_First_Hand.Add(pairList[i + 10]);
-                        temp_AI_First_Hand.Add(pairList[i + 11]);
-                        temp_AI_First_Hand.Add(pairList[i + 12]);
-                        temp_AI_First_Hand.Add(pairList[i + 13]);
-                        temp_AI_First_Hand.Add(pairList[i + 14]);
-                        temp_AI_First_Hand.Add(pairList[i + 15]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
-                    }
-                }
-            }
-
-            //4，7个连对，14张牌
-            if (pairList.Count >= 14)
-            {
-                for (int i = 0; i < pairList.Count - 12; i += 2)
-                {
-                    if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1)
-                    {
-                        temp_AI_First_Hand.Add(pairList[i]);
-                        temp_AI_First_Hand.Add(pairList[i + 1]);
-                        temp_AI_First_Hand.Add(pairList[i + 2]);
-                        temp_AI_First_Hand.Add(pairList[i + 3]);
-                        temp_AI_First_Hand.Add(pairList[i + 4]);
-                        temp_AI_First_Hand.Add(pairList[i + 5]);
-                        temp_AI_First_Hand.Add(pairList[i + 6]);
-                        temp_AI_First_Hand.Add(pairList[i + 7]);
-                        temp_AI_First_Hand.Add(pairList[i + 8]);
-                        temp_AI_First_Hand.Add(pairList[i + 9]);
-                        temp_AI_First_Hand.Add(pairList[i + 10]);
-                        temp_AI_First_Hand.Add(pairList[i + 11]);
-                        temp_AI_First_Hand.Add(pairList[i + 12]);
-                        temp_AI_First_Hand.Add(pairList[i + 13]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
-                    }
-                }
-            }
-
-            //5，6个连对，12张牌
-            if (pairList.Count >= 12)
-            {
-                for (int i = 0; i < pairList.Count - 10; i += 2)
-                {
-                    if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1)
-                    {
-                        temp_AI_First_Hand.Add(pairList[i]);
-                        temp_AI_First_Hand.Add(pairList[i + 1]);
-                        temp_AI_First_Hand.Add(pairList[i + 2]);
-                        temp_AI_First_Hand.Add(pairList[i + 3]);
-                        temp_AI_First_Hand.Add(pairList[i + 4]);
-                        temp_AI_First_Hand.Add(pairList[i + 5]);
-                        temp_AI_First_Hand.Add(pairList[i + 6]);
-                        temp_AI_First_Hand.Add(pairList[i + 7]);
-                        temp_AI_First_Hand.Add(pairList[i + 8]);
-                        temp_AI_First_Hand.Add(pairList[i + 9]);
-                        temp_AI_First_Hand.Add(pairList[i + 10]);
-                        temp_AI_First_Hand.Add(pairList[i + 11]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
-                    }
-                }
-            }
-
-            //6，5个连对，10张牌
-            if (pairList.Count >= 10)
-            {
-                for (int i = 0; i < pairList.Count - 8; i += 2)
-                {
-                    if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1)
-                    {
-                        temp_AI_First_Hand.Add(pairList[i]);
-                        temp_AI_First_Hand.Add(pairList[i + 1]);
-                        temp_AI_First_Hand.Add(pairList[i + 2]);
-                        temp_AI_First_Hand.Add(pairList[i + 3]);
-                        temp_AI_First_Hand.Add(pairList[i + 4]);
-                        temp_AI_First_Hand.Add(pairList[i + 5]);
-                        temp_AI_First_Hand.Add(pairList[i + 6]);
-                        temp_AI_First_Hand.Add(pairList[i + 7]);
-                        temp_AI_First_Hand.Add(pairList[i + 8]);
-                        temp_AI_First_Hand.Add(pairList[i + 9]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
-                    }
-                }
-            }
-
-            //7，4个连对，8张牌
-            if (pairList.Count >= 8)
-            {
-                for (int i = 0; i < pairList.Count - 6; i += 2)
-                {
-                    if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
-                        pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1)
-                    {
-                        temp_AI_First_Hand.Add(pairList[i]);
-                        temp_AI_First_Hand.Add(pairList[i + 1]);
-                        temp_AI_First_Hand.Add(pairList[i + 2]);
-                        temp_AI_First_Hand.Add(pairList[i + 3]);
-                        temp_AI_First_Hand.Add(pairList[i + 4]);
-                        temp_AI_First_Hand.Add(pairList[i + 5]);
-                        temp_AI_First_Hand.Add(pairList[i + 6]);
-                        temp_AI_First_Hand.Add(pairList[i + 7]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
-                    }
-                }
-            }
-
-            //8，3个连对，6张牌
+            //判断连对
             if (pairList.Count >= 6)
             {
                 for (int i = 0; i < pairList.Count - 4; i += 2)
                 {
+                    //若ai临时出牌库有至少6张连对，则只判断最后四张牌是否构成连对，若满足则添加到ai临时出牌库，反之，跳过
+                    if (temp_AI_First_Hand.Count >= 6)
+                    {
+                        if (temp_AI_First_Hand[temp_AI_First_Hand.Count - 2].GetComponent<CardInformations>().CardValue - pairList[i].GetComponent<CardInformations>().CardValue == -1 &&
+                            temp_AI_First_Hand[temp_AI_First_Hand.Count - 1].GetComponent<CardInformations>().CardValue - pairList[i + 1].GetComponent<CardInformations>().CardValue == -1)
+                        {
+                            temp_AI_First_Hand.Add(pairList[i]);
+                            temp_AI_First_Hand.Add(pairList[i + 1]);
+
+                            continue;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+
+                    //判断得到最少6张连对，并加入ai临时出牌库
                     if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
                         pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
                         pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
@@ -1072,18 +751,16 @@ namespace PIXEL.Landlords.AI
                         temp_AI_First_Hand.Add(pairList[i + 3]);
                         temp_AI_First_Hand.Add(pairList[i + 4]);
                         temp_AI_First_Hand.Add(pairList[i + 5]);
-
-                        //移除添加的对子
-                        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-                        {
-                            if (pairList.Contains(temp_AI_First_Hand[j]) == true)
-                            {
-                                pairList.Remove(temp_AI_First_Hand[j]);
-                            }
-                        }
-
-                        return;
                     }
+                }
+            }
+
+            //移除添加的对子
+            for (int i = temp_AI_First_Hand.Count - 1; i >= 0; i--)
+            {
+                if (pairList.Contains(temp_AI_First_Hand[i]) == true)
+                {
+                    pairList.Remove(temp_AI_First_Hand[i]);
                 }
             }
         }
@@ -1116,10 +793,10 @@ namespace PIXEL.Landlords.AI
                 }
             }
 
-            //这里有问题，还是得分类去写
-
+            //for循环判断顺子
             for (int i = 0; i < singleList.Count - 1; i++)
             {
+                //若ai临时出牌库的数量大于等于2，则只比较最后两张牌是否满足顺子条件
                 if (temp_AI_First_Hand.Count >= 2)
                 {
                     if (temp_AI_First_Hand[temp_AI_First_Hand.Count - 1].GetComponent<CardInformations>().CardValue - singleList[i + 1].GetComponent<CardInformations>().CardValue == -1)
@@ -1137,6 +814,7 @@ namespace PIXEL.Landlords.AI
                     }
                 }
 
+                //依次判断单牌库的两张牌之间的牌面值是否满足顺子条件，若满足，则添加到ai临时出牌库
                 if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i+1].GetComponent<CardInformations>().CardValue == -1)
                 {
                     if (temp_AI_First_Hand.Contains(singleList[i]) == false)
@@ -1161,8 +839,7 @@ namespace PIXEL.Landlords.AI
                 }
             }
 
-
-
+            //若最后ai临时出牌库的数量小于5张，则不满足顺子，则将其全部退回到单牌库
             if (temp_AI_First_Hand.Count < 5)
             {
                 for (int i = temp_AI_First_Hand.Count - 1; i >= 0 ; i--)
@@ -1175,344 +852,6 @@ namespace PIXEL.Landlords.AI
                     temp_AI_First_Hand.Remove(temp_AI_First_Hand[i]);
                 }
             }
-
-            //for (int i = 0; i < singleList.Count - 4; i++)
-            //{
-            //    if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i + 1].GetComponent<CardInformations>().CardValue == -1 &&
-            //        singleList[i + 1].GetComponent<CardInformations>().CardValue - singleList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
-            //        singleList[i + 2].GetComponent<CardInformations>().CardValue - singleList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
-            //        singleList[i + 3].GetComponent<CardInformations>().CardValue - singleList[i + 4].GetComponent<CardInformations>().CardValue == -1)
-            //    {
-            //        temp_AI_First_Hand.Add(singleList[i]);
-            //        temp_AI_First_Hand.Add(singleList[i + 1]);
-            //        temp_AI_First_Hand.Add(singleList[i + 2]);
-            //        temp_AI_First_Hand.Add(singleList[i + 3]);
-            //        temp_AI_First_Hand.Add(singleList[i + 4]);
-
-            //        for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //        {
-            //            if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //            {
-            //                singleList.Remove(temp_AI_First_Hand[j]);
-            //            }
-            //        }
-
-            //        break;
-            //    }
-            //}
-
-            //OrderCardsList(temp_AI_First_Hand);
-
-            //if (singleList.Count > 0)
-            //{
-            //    for (int i = 0; i < singleList.Count; i++)
-            //    {
-            //        if (temp_AI_First_Hand[temp_AI_First_Hand.Count - 1].GetComponent<CardInformations>().CardValue - singleList[i].GetComponent<CardInformations>().CardValue == -1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //        }
-            //    }
-
-            //    for (int i = temp_AI_First_Hand.Count - 1; i >= 0; i--)
-            //    {
-            //        if (singleList.Contains(temp_AI_First_Hand[i]) == true)
-            //        {
-            //            singleList.Remove(temp_AI_First_Hand[i]);
-            //        }
-            //    }
-            //}
-
-            #region 
-
-            ////1，12个顺子
-            //if (singleList.Count >= 12)
-            //{
-            //    for (int i = singleList.Count - 11; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 8].GetComponent<CardInformations>().CardValue - singleList[i - 9].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 9].GetComponent<CardInformations>().CardValue - singleList[i - 10].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 10].GetComponent<CardInformations>().CardValue - singleList[i - 11].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-            //            temp_AI_First_Hand.Add(singleList[i - 5]);
-            //            temp_AI_First_Hand.Add(singleList[i - 6]);
-            //            temp_AI_First_Hand.Add(singleList[i - 7]);
-            //            temp_AI_First_Hand.Add(singleList[i - 8]);
-            //            temp_AI_First_Hand.Add(singleList[i - 9]);
-            //            temp_AI_First_Hand.Add(singleList[i - 10]);
-            //            temp_AI_First_Hand.Add(singleList[i - 11]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            ////2，11个顺子
-            //if (singleList.Count >= 11)
-            //{
-            //    for (int i = singleList.Count - 10; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 8].GetComponent<CardInformations>().CardValue - singleList[i - 9].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 9].GetComponent<CardInformations>().CardValue - singleList[i - 10].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-            //            temp_AI_First_Hand.Add(singleList[i - 5]);
-            //            temp_AI_First_Hand.Add(singleList[i - 6]);
-            //            temp_AI_First_Hand.Add(singleList[i - 7]);
-            //            temp_AI_First_Hand.Add(singleList[i - 8]);
-            //            temp_AI_First_Hand.Add(singleList[i - 9]);
-            //            temp_AI_First_Hand.Add(singleList[i - 10]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            ////3，10个顺子
-            //if (singleList.Count >= 10)
-            //{
-            //    for (int i = singleList.Count - 9; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 8].GetComponent<CardInformations>().CardValue - singleList[i - 9].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-            //            temp_AI_First_Hand.Add(singleList[i - 5]);
-            //            temp_AI_First_Hand.Add(singleList[i - 6]);
-            //            temp_AI_First_Hand.Add(singleList[i - 7]);
-            //            temp_AI_First_Hand.Add(singleList[i - 8]);
-            //            temp_AI_First_Hand.Add(singleList[i - 9]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            ////4，9个顺子
-            //if (singleList.Count >= 9)
-            //{
-            //    for (int i = singleList.Count - 8; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-            //            temp_AI_First_Hand.Add(singleList[i - 5]);
-            //            temp_AI_First_Hand.Add(singleList[i - 6]);
-            //            temp_AI_First_Hand.Add(singleList[i - 7]);
-            //            temp_AI_First_Hand.Add(singleList[i - 8]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            ////5，8个顺子
-            //if (singleList.Count >= 8)
-            //{
-            //    for (int i = singleList.Count - 7; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-            //            temp_AI_First_Hand.Add(singleList[i - 5]);
-            //            temp_AI_First_Hand.Add(singleList[i - 6]);
-            //            temp_AI_First_Hand.Add(singleList[i - 7]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            ////6，7个顺子
-            //if (singleList.Count >= 7)
-            //{
-            //    for (int i = singleList.Count - 5 - 1; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-            //            temp_AI_First_Hand.Add(singleList[i - 5]);
-            //            temp_AI_First_Hand.Add(singleList[i - 6]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            ////7，6个顺子
-            //if (singleList.Count >= 6)
-            //{
-            //    for (int i = singleList.Count - 4 - 1; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-            //            temp_AI_First_Hand.Add(singleList[i - 5]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            ////8，5个顺子
-            //if (singleList.Count >= 5)
-            //{
-            //    for (int i = singleList.Count - 3 - 1; i >= 0; i--)
-            //    {
-            //        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
-            //            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1)
-            //        {
-            //            temp_AI_First_Hand.Add(singleList[i]);
-            //            temp_AI_First_Hand.Add(singleList[i - 1]);
-            //            temp_AI_First_Hand.Add(singleList[i - 2]);
-            //            temp_AI_First_Hand.Add(singleList[i - 3]);
-            //            temp_AI_First_Hand.Add(singleList[i - 4]);
-
-            //            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
-            //            {
-            //                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
-            //                {
-            //                    singleList.Remove(temp_AI_First_Hand[j]);
-            //                }
-            //            }
-
-            //            return;
-            //        }
-            //    }
-            //}
-
-            #endregion
         }
 
         //6，判断---四带对
@@ -1570,14 +909,6 @@ namespace PIXEL.Landlords.AI
                         tripleList.Remove(pairList[i]);
                     }
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0 ; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
             for (int i = 0; i < 4; i++)
@@ -1734,14 +1065,6 @@ namespace PIXEL.Landlords.AI
                         tripleList.Remove(pairList[i]);
                     }
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
             //从最小的开始添加
@@ -1906,14 +1229,6 @@ namespace PIXEL.Landlords.AI
                         tripleList.Remove(pairList[i]);
                     }
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0 ; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
             for (int i = 0; i < pairList.Count/2; i+=2)
@@ -2091,7 +1406,6 @@ namespace PIXEL.Landlords.AI
         #endregion
 
 
-
         //移除目标牌库中的所有元素
         private void RemoveCardList(List<GameObject> _targetCardList) 
         {
@@ -2100,10 +1414,6 @@ namespace PIXEL.Landlords.AI
                 _targetCardList.Remove(_targetCardList[i]);
             }
         }
-
-        ///2021-11-22 : 发现了问题所在
-        ///之前会出现一种情况就是，当我出了
-
 
 
         /// <summary>
@@ -2180,7 +1490,7 @@ namespace PIXEL.Landlords.AI
                 return CurrentTurn_Boom();
             }
 
-            if (pairList.Count <= 2)
+            if (pairList.Count < 2)
             {
                 for (int i = 0; i < tripleList.Count - 2; i += 3)
                 {
@@ -2198,27 +1508,29 @@ namespace PIXEL.Landlords.AI
                         tripleList.Remove(pairList[i]);
                     }
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0 ; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
-            //获取满足条件的对子
-            for (int i = 0; i < pairList.Count - 2; i += 2)
-            {
-                if (pairList[pairList.Count - i - 1].GetComponent<CardInformations>().CardValue + pairList[pairList.Count - i - 2].GetComponent<CardInformations>().CardValue > _currentTurnCardPoint)
-                {
-                    tempPlayCardList.Add(pairList[pairList.Count - i - 1]);
-                    tempPlayCardList.Add(pairList[pairList.Count - i - 2]);
 
-                    break;
+            if (pairList.Count > 2)
+            {
+                //获取满足条件的对子
+                for (int i = 0; i < pairList.Count - 2; i += 2)
+                {
+                    if (pairList[pairList.Count - i - 1].GetComponent<CardInformations>().CardValue + pairList[pairList.Count - i - 2].GetComponent<CardInformations>().CardValue > _currentTurnCardPoint)
+                    {
+                        tempPlayCardList.Add(pairList[pairList.Count - i - 1]);
+                        tempPlayCardList.Add(pairList[pairList.Count - i - 2]);
+
+                        break;
+                    }
                 }
             }
+            else
+            {
+                tempPlayCardList.Add(pairList[0]);
+                tempPlayCardList.Add(pairList[1]);
+            }
+
 
             for (int i = tempPlayCardList.Count - 1; i >= 0; i--)
             {
@@ -2467,8 +1779,6 @@ namespace PIXEL.Landlords.AI
                     {
                         pairList.Add(tripleList[i]);
                         pairList.Add(tripleList[i + 1]);
-
-                        //singleList.Add(tripleList[i + 2]);
                     }
                 }
 
@@ -2482,14 +1792,6 @@ namespace PIXEL.Landlords.AI
                         tripleList.Remove(pairList[i]);
                     }
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
             //同理从最小的开始添加
@@ -2736,8 +2038,6 @@ namespace PIXEL.Landlords.AI
                     {
                         pairList.Add(tripleList[i]);
                         pairList.Add(tripleList[i + 1]);
-
-                        //singleList.Add(tripleList[i + 2]);
                     }
                 }
 
@@ -2751,14 +2051,6 @@ namespace PIXEL.Landlords.AI
                         tripleList.Remove(pairList[i]);
                     }
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
             for (int i = 0; i < 4; i++)
@@ -2797,30 +2089,29 @@ namespace PIXEL.Landlords.AI
                 return CurrentTurn_Boom();
             }
 
-            if (singleList.Count < _currentTurnCardCounts)
+            //拆对子库
+            for (int i = 0; i < pairList.Count - 1; i += 2)
             {
-                for (int i = 0; i < pairList.Count - 1; i += 2)
+                if (singleList.Contains(pairList[i]) == false)
                 {
-                    if (singleList.Contains(pairList[i]) == false)
-                    {
-                        singleList.Add(pairList[i]);
-                    }
+                    singleList.Add(pairList[i]);
                 }
+            }
 
-                OrderCardsList(singleList);
+            OrderCardsList(singleList);
 
-                for (int i = singleList.Count - 1; i >= 0; i--)
+            for (int i = singleList.Count - 1; i >= 0; i--)
+            {
+                if (pairList.Contains(singleList[i]) == true)
                 {
-                    if (pairList.Contains(singleList[i]) == true)
-                    {
-                        pairList.Remove(singleList[i]);
-                    }
+                    pairList.Remove(singleList[i]);
                 }
             }
 
             //还是得分类，因为我不知道他的顺子到底会有几张牌
 
             //判断连对的循环次数为：z = x - y + 1
+            //--------------------------------------本来新写了一个方法的，但是写完发现，我忽略了ai后手出牌是需要计算点数的，所以还是用老方法
 
             //1，5张顺子
             if (_currentTurnCardCounts == 5)
@@ -3208,37 +2499,25 @@ namespace PIXEL.Landlords.AI
                 return CurrentTurn_Boom();
             }
 
-            if (pairList.Count < _currentTurnCardCounts)
+            //直接拆三连库
+            for (int i = 0; i < tripleList.Count - 2; i += 3)
             {
-                for (int i = 0; i < tripleList.Count - 2; i+=3)
+                if (pairList.Contains(tripleList[i]) == false)
                 {
-                    if (pairList.Contains(tripleList[i]) == false)
-                    {
-                        pairList.Add(tripleList[i]);
-                        pairList.Add(tripleList[i + 1]);
-
-                        //singleList.Add(tripleList[i + 2]);
-                    }
+                    pairList.Add(tripleList[i]);
+                    pairList.Add(tripleList[i + 1]);
                 }
+            }
 
-                //重新排序对子库
-                OrderCardsList(pairList);
+            //重新排序对子库
+            OrderCardsList(pairList);
 
-                for (int i = pairList.Count - 1; i >= 0 ; i--)
+            for (int i = pairList.Count - 1; i >= 0; i--)
+            {
+                if (tripleList.Contains(pairList[i]) == true)
                 {
-                    if (tripleList.Contains(pairList[i]) == true)
-                    {
-                        tripleList.Remove(pairList[i]);
-                    }
+                    tripleList.Remove(pairList[i]);
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
             //跟顺子同理，也要分情况
@@ -3888,8 +3167,6 @@ namespace PIXEL.Landlords.AI
                     {
                         pairList.Add(tripleList[i]);
                         pairList.Add(tripleList[i + 1]);
-
-                        //singleList.Add(tripleList[i + 2]);
                     }
                 }
 
@@ -3903,14 +3180,6 @@ namespace PIXEL.Landlords.AI
                         tripleList.Remove(pairList[i]);
                     }
                 }
-
-                //for (int i = singleList.Count - 1; i >= 0; i--)
-                //{
-                //    if (tripleList.Contains(singleList[i]) == true)
-                //    {
-                //        tripleList.Remove(singleList[i]);
-                //    }
-                //}
             }
 
             //同理，从最小的开始获取
@@ -3941,21 +3210,17 @@ namespace PIXEL.Landlords.AI
         //当没有满足的卡牌组合的时候，判断炸弹库
         private List<GameObject> CurrentTurn_Boom() 
         {
-            Debug.Log(jokerBoomList.Count);
-            Debug.Log("Check Boom");
             List<GameObject> tempPlayCardList = new List<GameObject>();
             tempPlayCardList.Clear();
 
             if (boomList.Count == 0 || boomList == null)
             {
-                Debug.Log("There is no Boom");
                 return CurrentTurn_JokerBoom();
             }
 
             //当炸弹库有牌时
             if (boomList.Count != 0 || boomList != null)
             {
-                Debug.Log("Check Normal Boom");
                 //添加炸弹
                 for (int i = 0; i < 4; i++)
                 {
@@ -3976,7 +3241,6 @@ namespace PIXEL.Landlords.AI
 
             if (tempPlayCardList.Count == 0||tempPlayCardList == null)
             {
-                Debug.Log(1);
                 return CurrentTurn_JokerBoom();
             }
 
@@ -3985,13 +3249,11 @@ namespace PIXEL.Landlords.AI
 
         private List<GameObject> CurrentTurn_JokerBoom() 
         {
-            Debug.Log("Check Joker Boom");
             List<GameObject> tempPlayCardList = new List<GameObject>();
             tempPlayCardList.Clear();
 
             if (jokerBoomList.Count == 0 || jokerBoomList == null)
             {
-                Debug.Log("There is no JokerBoom");
                 return null;
             }
 
@@ -8599,5 +7861,665 @@ namespace PIXEL.Landlords.AI
 //}
 
 //#endregion
+
+#endregion
+
+//--------------------------------------------------
+
+#region 之前老旧的，AI先手出牌时，判断连对的方式
+
+//同样，这里也要分类写
+//1，10个连对，20张牌
+//if (pairList.Count >= 20)
+//{
+//    for (int i = 0; i < pairList.Count - 18; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 12].GetComponent<CardInformations>().CardValue - pairList[i + 14].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 13].GetComponent<CardInformations>().CardValue - pairList[i + 15].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 14].GetComponent<CardInformations>().CardValue - pairList[i + 16].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 15].GetComponent<CardInformations>().CardValue - pairList[i + 17].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 16].GetComponent<CardInformations>().CardValue - pairList[i + 18].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 17].GetComponent<CardInformations>().CardValue - pairList[i + 19].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+//            temp_AI_First_Hand.Add(pairList[i + 6]);
+//            temp_AI_First_Hand.Add(pairList[i + 7]);
+//            temp_AI_First_Hand.Add(pairList[i + 8]);
+//            temp_AI_First_Hand.Add(pairList[i + 9]);
+//            temp_AI_First_Hand.Add(pairList[i + 10]);
+//            temp_AI_First_Hand.Add(pairList[i + 11]);
+//            temp_AI_First_Hand.Add(pairList[i + 12]);
+//            temp_AI_First_Hand.Add(pairList[i + 13]);
+//            temp_AI_First_Hand.Add(pairList[i + 14]);
+//            temp_AI_First_Hand.Add(pairList[i + 15]);
+//            temp_AI_First_Hand.Add(pairList[i + 16]);
+//            temp_AI_First_Hand.Add(pairList[i + 17]);
+//            temp_AI_First_Hand.Add(pairList[i + 18]);
+//            temp_AI_First_Hand.Add(pairList[i + 19]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////2，9个连对，18张牌
+//if (pairList.Count >= 18)
+//{
+//    for (int i = 0; i < pairList.Count - 16; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 12].GetComponent<CardInformations>().CardValue - pairList[i + 14].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 13].GetComponent<CardInformations>().CardValue - pairList[i + 15].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 14].GetComponent<CardInformations>().CardValue - pairList[i + 16].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 15].GetComponent<CardInformations>().CardValue - pairList[i + 17].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+//            temp_AI_First_Hand.Add(pairList[i + 6]);
+//            temp_AI_First_Hand.Add(pairList[i + 7]);
+//            temp_AI_First_Hand.Add(pairList[i + 8]);
+//            temp_AI_First_Hand.Add(pairList[i + 9]);
+//            temp_AI_First_Hand.Add(pairList[i + 10]);
+//            temp_AI_First_Hand.Add(pairList[i + 11]);
+//            temp_AI_First_Hand.Add(pairList[i + 12]);
+//            temp_AI_First_Hand.Add(pairList[i + 13]);
+//            temp_AI_First_Hand.Add(pairList[i + 14]);
+//            temp_AI_First_Hand.Add(pairList[i + 15]);
+//            temp_AI_First_Hand.Add(pairList[i + 16]);
+//            temp_AI_First_Hand.Add(pairList[i + 17]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////3，8个连对，16张牌
+//if (pairList.Count >= 16)
+//{
+//    for (int i = 0; i < pairList.Count - 14; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 12].GetComponent<CardInformations>().CardValue - pairList[i + 14].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 13].GetComponent<CardInformations>().CardValue - pairList[i + 15].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+//            temp_AI_First_Hand.Add(pairList[i + 6]);
+//            temp_AI_First_Hand.Add(pairList[i + 7]);
+//            temp_AI_First_Hand.Add(pairList[i + 8]);
+//            temp_AI_First_Hand.Add(pairList[i + 9]);
+//            temp_AI_First_Hand.Add(pairList[i + 10]);
+//            temp_AI_First_Hand.Add(pairList[i + 11]);
+//            temp_AI_First_Hand.Add(pairList[i + 12]);
+//            temp_AI_First_Hand.Add(pairList[i + 13]);
+//            temp_AI_First_Hand.Add(pairList[i + 14]);
+//            temp_AI_First_Hand.Add(pairList[i + 15]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////4，7个连对，14张牌
+//if (pairList.Count >= 14)
+//{
+//    for (int i = 0; i < pairList.Count - 12; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 10].GetComponent<CardInformations>().CardValue - pairList[i + 12].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 11].GetComponent<CardInformations>().CardValue - pairList[i + 13].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+//            temp_AI_First_Hand.Add(pairList[i + 6]);
+//            temp_AI_First_Hand.Add(pairList[i + 7]);
+//            temp_AI_First_Hand.Add(pairList[i + 8]);
+//            temp_AI_First_Hand.Add(pairList[i + 9]);
+//            temp_AI_First_Hand.Add(pairList[i + 10]);
+//            temp_AI_First_Hand.Add(pairList[i + 11]);
+//            temp_AI_First_Hand.Add(pairList[i + 12]);
+//            temp_AI_First_Hand.Add(pairList[i + 13]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////5，6个连对，12张牌
+//if (pairList.Count >= 12)
+//{
+//    for (int i = 0; i < pairList.Count - 10; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 8].GetComponent<CardInformations>().CardValue - pairList[i + 10].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 9].GetComponent<CardInformations>().CardValue - pairList[i + 11].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+//            temp_AI_First_Hand.Add(pairList[i + 6]);
+//            temp_AI_First_Hand.Add(pairList[i + 7]);
+//            temp_AI_First_Hand.Add(pairList[i + 8]);
+//            temp_AI_First_Hand.Add(pairList[i + 9]);
+//            temp_AI_First_Hand.Add(pairList[i + 10]);
+//            temp_AI_First_Hand.Add(pairList[i + 11]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////6，5个连对，10张牌
+//if (pairList.Count >= 10)
+//{
+//    for (int i = 0; i < pairList.Count - 8; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 6].GetComponent<CardInformations>().CardValue - pairList[i + 8].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 7].GetComponent<CardInformations>().CardValue - pairList[i + 9].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+//            temp_AI_First_Hand.Add(pairList[i + 6]);
+//            temp_AI_First_Hand.Add(pairList[i + 7]);
+//            temp_AI_First_Hand.Add(pairList[i + 8]);
+//            temp_AI_First_Hand.Add(pairList[i + 9]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////7，4个连对，8张牌
+//if (pairList.Count >= 8)
+//{
+//    for (int i = 0; i < pairList.Count - 6; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 4].GetComponent<CardInformations>().CardValue - pairList[i + 6].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 5].GetComponent<CardInformations>().CardValue - pairList[i + 7].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+//            temp_AI_First_Hand.Add(pairList[i + 6]);
+//            temp_AI_First_Hand.Add(pairList[i + 7]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////8，3个连对，6张牌
+//if (pairList.Count >= 6)
+//{
+//    for (int i = 0; i < pairList.Count - 4; i += 2)
+//    {
+//        if (pairList[i].GetComponent<CardInformations>().CardValue - pairList[i + 2].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 1].GetComponent<CardInformations>().CardValue - pairList[i + 3].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 2].GetComponent<CardInformations>().CardValue - pairList[i + 4].GetComponent<CardInformations>().CardValue == -1 &&
+//            pairList[i + 3].GetComponent<CardInformations>().CardValue - pairList[i + 5].GetComponent<CardInformations>().CardValue == -1)
+//        {
+//            temp_AI_First_Hand.Add(pairList[i]);
+//            temp_AI_First_Hand.Add(pairList[i + 1]);
+//            temp_AI_First_Hand.Add(pairList[i + 2]);
+//            temp_AI_First_Hand.Add(pairList[i + 3]);
+//            temp_AI_First_Hand.Add(pairList[i + 4]);
+//            temp_AI_First_Hand.Add(pairList[i + 5]);
+
+//            //移除添加的对子
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (pairList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    pairList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+#endregion
+
+
+#region 之前老旧的，AI先手出牌时，判断顺子的方式
+
+////1，12个顺子
+//if (singleList.Count >= 12)
+//{
+//    for (int i = singleList.Count - 11; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 8].GetComponent<CardInformations>().CardValue - singleList[i - 9].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 9].GetComponent<CardInformations>().CardValue - singleList[i - 10].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 10].GetComponent<CardInformations>().CardValue - singleList[i - 11].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+//            temp_AI_First_Hand.Add(singleList[i - 5]);
+//            temp_AI_First_Hand.Add(singleList[i - 6]);
+//            temp_AI_First_Hand.Add(singleList[i - 7]);
+//            temp_AI_First_Hand.Add(singleList[i - 8]);
+//            temp_AI_First_Hand.Add(singleList[i - 9]);
+//            temp_AI_First_Hand.Add(singleList[i - 10]);
+//            temp_AI_First_Hand.Add(singleList[i - 11]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////2，11个顺子
+//if (singleList.Count >= 11)
+//{
+//    for (int i = singleList.Count - 10; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 8].GetComponent<CardInformations>().CardValue - singleList[i - 9].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 9].GetComponent<CardInformations>().CardValue - singleList[i - 10].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+//            temp_AI_First_Hand.Add(singleList[i - 5]);
+//            temp_AI_First_Hand.Add(singleList[i - 6]);
+//            temp_AI_First_Hand.Add(singleList[i - 7]);
+//            temp_AI_First_Hand.Add(singleList[i - 8]);
+//            temp_AI_First_Hand.Add(singleList[i - 9]);
+//            temp_AI_First_Hand.Add(singleList[i - 10]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////3，10个顺子
+//if (singleList.Count >= 10)
+//{
+//    for (int i = singleList.Count - 9; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 8].GetComponent<CardInformations>().CardValue - singleList[i - 9].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+//            temp_AI_First_Hand.Add(singleList[i - 5]);
+//            temp_AI_First_Hand.Add(singleList[i - 6]);
+//            temp_AI_First_Hand.Add(singleList[i - 7]);
+//            temp_AI_First_Hand.Add(singleList[i - 8]);
+//            temp_AI_First_Hand.Add(singleList[i - 9]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////4，9个顺子
+//if (singleList.Count >= 9)
+//{
+//    for (int i = singleList.Count - 8; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 7].GetComponent<CardInformations>().CardValue - singleList[i - 8].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+//            temp_AI_First_Hand.Add(singleList[i - 5]);
+//            temp_AI_First_Hand.Add(singleList[i - 6]);
+//            temp_AI_First_Hand.Add(singleList[i - 7]);
+//            temp_AI_First_Hand.Add(singleList[i - 8]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////5，8个顺子
+//if (singleList.Count >= 8)
+//{
+//    for (int i = singleList.Count - 7; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 6].GetComponent<CardInformations>().CardValue - singleList[i - 7].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+//            temp_AI_First_Hand.Add(singleList[i - 5]);
+//            temp_AI_First_Hand.Add(singleList[i - 6]);
+//            temp_AI_First_Hand.Add(singleList[i - 7]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////6，7个顺子
+//if (singleList.Count >= 7)
+//{
+//    for (int i = singleList.Count - 5 - 1; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 5].GetComponent<CardInformations>().CardValue - singleList[i - 6].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+//            temp_AI_First_Hand.Add(singleList[i - 5]);
+//            temp_AI_First_Hand.Add(singleList[i - 6]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////7，6个顺子
+//if (singleList.Count >= 6)
+//{
+//    for (int i = singleList.Count - 4 - 1; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 4].GetComponent<CardInformations>().CardValue - singleList[i - 5].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+//            temp_AI_First_Hand.Add(singleList[i - 5]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
+
+////8，5个顺子
+//if (singleList.Count >= 5)
+//{
+//    for (int i = singleList.Count - 3 - 1; i >= 0; i--)
+//    {
+//        if (singleList[i].GetComponent<CardInformations>().CardValue - singleList[i - 1].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 1].GetComponent<CardInformations>().CardValue - singleList[i - 2].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 2].GetComponent<CardInformations>().CardValue - singleList[i - 3].GetComponent<CardInformations>().CardValue == 1 &&
+//            singleList[i - 3].GetComponent<CardInformations>().CardValue - singleList[i - 4].GetComponent<CardInformations>().CardValue == 1)
+//        {
+//            temp_AI_First_Hand.Add(singleList[i]);
+//            temp_AI_First_Hand.Add(singleList[i - 1]);
+//            temp_AI_First_Hand.Add(singleList[i - 2]);
+//            temp_AI_First_Hand.Add(singleList[i - 3]);
+//            temp_AI_First_Hand.Add(singleList[i - 4]);
+
+//            for (int j = temp_AI_First_Hand.Count - 1; j >= 0; j--)
+//            {
+//                if (singleList.Contains(temp_AI_First_Hand[j]) == true)
+//                {
+//                    singleList.Remove(temp_AI_First_Hand[j]);
+//                }
+//            }
+
+//            return;
+//        }
+//    }
+//}
 
 #endregion

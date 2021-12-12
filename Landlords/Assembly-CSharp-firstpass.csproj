@@ -258,14 +258,14 @@
     <Reference Include="DOTween">
       <HintPath>E:/Unity Project/Landlords/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus">
-      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcelPlugins/EPPlus.dll</HintPath>
-    </Reference>
     <Reference Include="Excel">
-      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcelPlugins/Excel.dll</HintPath>
+      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcel/Excel.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcelPlugins/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcel/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcel/System.Data.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>E:/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
