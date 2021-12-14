@@ -38,7 +38,6 @@ namespace PIXEL.Landlords.Game.LevelMode
         private bool levelIsUp;
         private void Start()
         {
-            Debug.Log(levelNumber);
             levelExcelTablePath = Application.streamingAssetsPath + "/ExcelFiles" + "/Landlords_Level" + ".xlsx";//一定要加后缀.xlsx，因为他只能读取这个格式的Excel文件
 
             PlayerPrefs.SetString("SceneName", SceneManager.GetActiveScene().name);

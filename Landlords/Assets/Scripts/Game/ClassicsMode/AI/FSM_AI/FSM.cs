@@ -55,6 +55,7 @@ namespace PIXEL.Landlords.AI
         [Header("AI对应音效播放器")]
         public AudioSource aiNo1AudioPlayer;
         public AudioSource aiNo2AudioPlayer;
+        public AudioSource generalAudioSource;
         void Start()
         {
             //添加状态
@@ -69,6 +70,7 @@ namespace PIXEL.Landlords.AI
             //获取对应ai的音效播放器
             aiNo1AudioPlayer = DealCardManager.Instance.aiNo1Hand.GetComponent<AudioSource>();
             aiNo2AudioPlayer = DealCardManager.Instance.aiNo2Hand.GetComponent<AudioSource>();
+            generalAudioSource = DealCardManager.Instance.aiNo1Hand.parent.GetComponent<AudioSource>();
 
             //将对应AI手牌添加到handCardGit
             if (gameObject.name == "Hand_aiNo1")
@@ -1527,8 +1529,11 @@ namespace PIXEL.Landlords.AI
             }
             else
             {
-                tempPlayCardList.Add(pairList[0]);
-                tempPlayCardList.Add(pairList[1]);
+                if (pairList[0].GetComponent<CardInformations>().CardValue + pairList[1].GetComponent<CardInformations>().CardValue > _currentTurnCardPoint)
+                {
+                    tempPlayCardList.Add(pairList[0]);
+                    tempPlayCardList.Add(pairList[1]);
+                }
             }
 
 

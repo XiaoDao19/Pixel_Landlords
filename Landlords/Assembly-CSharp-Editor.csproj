@@ -290,6 +290,9 @@
     <Reference Include="System.Data">
       <HintPath>E:/Unity Project/Landlords/Assets/Plugins/ReadExcel/System.Data.dll</HintPath>
     </Reference>
+    <Reference Include="SmartExplorer">
+      <HintPath>E:/Unity Project/Landlords/Assets/Plugins/SmartExplorer/SmartExplorer.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>E:/Unity Project/Landlords/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>

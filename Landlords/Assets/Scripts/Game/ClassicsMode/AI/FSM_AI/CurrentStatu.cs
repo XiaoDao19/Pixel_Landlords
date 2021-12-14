@@ -194,7 +194,7 @@ namespace PIXEL.Landlords.AI
     public class Statu_CombineCards : Statues
     {
         private FSM fSM;
-
+        private float turnChangeDelayTime;
         public Statu_CombineCards(FSM fSM)
         {
             this.fSM = fSM;
@@ -202,11 +202,17 @@ namespace PIXEL.Landlords.AI
 
         public void OnEnter()
         {
-
+            turnChangeDelayTime = Random.Range(0f, 2f);
         }
 
         public void OnUpdate()
         {
+            if (turnChangeDelayTime > 0f)
+            {
+                turnChangeDelayTime -= 0.02f;
+                return;
+            }
+
             float delayTime = Random.Range(0, 17);
 
 
@@ -379,13 +385,13 @@ namespace PIXEL.Landlords.AI
            
             if (fSM.currentAINumber == 1)
             {
-                AudioManager.PlayCard(fSM.aiNo1AudioPlayer);
+                AudioManager.PlayCard(fSM.generalAudioSource);
                 AudioManager.WomanPlayCard(fSM.aiNo1AudioPlayer,fSM.currentTurnAIPlayCard);
             }
 
             if (fSM.currentAINumber == 2)
             {
-                AudioManager.PlayCard(fSM.aiNo2AudioPlayer);
+                AudioManager.PlayCard(fSM.generalAudioSource);
                 AudioManager.ManPlayCard(fSM.aiNo2AudioPlayer, fSM.currentTurnAIPlayCard);
             }
 

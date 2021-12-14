@@ -1,8 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - OtherContol
     - PIXEL.Landlords.AI.CurrentStatu
     - PIXEL.Landlords.AI.FSM
+    - PIXEL.Landlords.Animation.SpecialCardAnimations.SpecialCardCombinationsAnimations
     - PIXEL.Landlords.Audio.AudioClipsProperty
     - PIXEL.Landlords.Card.CardInformations
     - PIXEL.Landlords.Card.CardOperations
@@ -15,11 +17,12 @@ ScriptsOnlyBuild:
     - PIXEL.Landlords.Game.LevelMode.LevelModeManager
     - PIXEL.Landlords.Game.PlayCardManager
     - PIXEL.Landlords.Game.RoundJudgmentManager
+    - PIXEL.Landlords.Game.SpecialCardCombinationEffect
     - PIXEL.Landlords.Game.WinnerCheckManager
     - PIXEL.Landlords.MainMenu.MainMenu
-    - PIXEL.Landlords.Sets.SettingsManager
+    - PIXEL.Landlords.Sets.PlayerInformatioSets.PlayerInforPanelManager
+    - PIXEL.Landlords.Sets.SystemSets.SettingsManager
     - PIXEL.Landlords.UI.ButtonEffect
-    - test
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
     Unity.2D.Animation.Editor.dll:
@@ -51,6 +54,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.RawImage
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   sceneClasses:
@@ -69,6 +74,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -82,35 +89,45 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11304}
-    - Class: 114
       Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11432}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 12146}
+      Script: {instanceID: 11312}
     - Class: 114
-      Script: {instanceID: 12408}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 12996}
+      Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 13148}
+      Script: {instanceID: 12418}
     - Class: 114
-      Script: {instanceID: 13566}
+      Script: {instanceID: 12452}
     - Class: 114
-      Script: {instanceID: 13972}
+      Script: {instanceID: 12462}
     - Class: 114
-      Script: {instanceID: 14138}
+      Script: {instanceID: 13010}
     - Class: 114
-      Script: {instanceID: 14598}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 14624}
+      Script: {instanceID: 13470}
     - Class: 114
-      Script: {instanceID: 14646}
+      Script: {instanceID: 13578}
+    - Class: 114
+      Script: {instanceID: 13986}
+    - Class: 114
+      Script: {instanceID: 14152}
+    - Class: 114
+      Script: {instanceID: 14612}
+    - Class: 114
+      Script: {instanceID: 14638}
+    - Class: 114
+      Script: {instanceID: 14660}
+    - Class: 114
+      Script: {instanceID: 54316}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -128,6 +145,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/Scene_ClassicsMode.unity:
     - Class: 1
@@ -148,50 +171,56 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11304}
-    - Class: 114
       Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11806}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 11312}
     - Class: 114
-      Script: {instanceID: 12340}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 12408}
+      Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 12478}
+      Script: {instanceID: 12234}
     - Class: 114
-      Script: {instanceID: 13148}
+      Script: {instanceID: 12350}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 12418}
     - Class: 114
-      Script: {instanceID: 13492}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 13540}
+      Script: {instanceID: 13432}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 13504}
     - Class: 114
-      Script: {instanceID: 13870}
+      Script: {instanceID: 13552}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13586}
+    - Class: 114
+      Script: {instanceID: 13882}
+    - Class: 114
+      Script: {instanceID: 13962}
     - Class: 114
       Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 14138}
+      Script: {instanceID: 13986}
     - Class: 114
-      Script: {instanceID: 14624}
+      Script: {instanceID: 14152}
     - Class: 114
-      Script: {instanceID: 14718}
+      Script: {instanceID: 14612}
+    - Class: 114
+      Script: {instanceID: 14638}
+    - Class: 114
+      Script: {instanceID: 14660}
+    - Class: 114
+      Script: {instanceID: 14730}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -207,6 +236,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/Scene_DevelopMode.unity:
     - Class: 1
@@ -227,50 +262,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11304}
-    - Class: 114
       Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11806}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 11312}
     - Class: 114
-      Script: {instanceID: 12408}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 12478}
+      Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 12926}
+      Script: {instanceID: 12234}
     - Class: 114
-      Script: {instanceID: 13148}
+      Script: {instanceID: 12418}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 13458}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13492}
+      Script: {instanceID: 13432}
     - Class: 114
-      Script: {instanceID: 13540}
+      Script: {instanceID: 13470}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 13504}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13552}
+    - Class: 114
+      Script: {instanceID: 13586}
+    - Class: 114
+      Script: {instanceID: 13962}
     - Class: 114
       Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 14142}
+      Script: {instanceID: 13986}
     - Class: 114
-      Script: {instanceID: 14624}
+      Script: {instanceID: 14152}
     - Class: 114
-      Script: {instanceID: 14718}
+      Script: {instanceID: 14156}
+    - Class: 114
+      Script: {instanceID: 14612}
+    - Class: 114
+      Script: {instanceID: 14638}
+    - Class: 114
+      Script: {instanceID: 14660}
+    - Class: 114
+      Script: {instanceID: 14730}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -286,6 +329,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/Scene_LevelMode.unity:
     - Class: 1
@@ -304,46 +353,56 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
-    - Class: 91
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11304}
-    - Class: 114
       Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11542}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11806}
+      Script: {instanceID: 11312}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 12408}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 12478}
+      Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 13148}
+      Script: {instanceID: 12234}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 12418}
     - Class: 114
-      Script: {instanceID: 13492}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 13540}
+      Script: {instanceID: 13432}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 13504}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13552}
+    - Class: 114
+      Script: {instanceID: 13586}
+    - Class: 114
+      Script: {instanceID: 13962}
     - Class: 114
       Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 14624}
+      Script: {instanceID: 13986}
     - Class: 114
-      Script: {instanceID: 14718}
+      Script: {instanceID: 14152}
+    - Class: 114
+      Script: {instanceID: 14612}
+    - Class: 114
+      Script: {instanceID: 14638}
+    - Class: 114
+      Script: {instanceID: 14660}
+    - Class: 114
+      Script: {instanceID: 14730}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -360,7 +419,25 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 7072231382eb3c4871b3dd75ad0227e1
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
   - hash:
       serializedVersion: 2
       Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
@@ -657,10 +734,10 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: b88367f455e1aa106e059ba67cae1408
+      Hash: ec2ccf8fbfc0a5010a5eb2fe5496fc93
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: test
+    className: OtherContol
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -715,6 +792,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
     className: SpriteShape
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PIXEL.Landlords.Game
+    className: SpecialCardCombinationEffect
   - hash:
       serializedVersion: 2
       Hash: 41f2849082554c569c4dec7adf85c5f9
@@ -817,12 +900,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 5f1752ed2092162f016c19510c28a8b9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
@@ -939,7 +1016,7 @@ ScriptsOnlyBuild:
     className: CardInformations
   - hash:
       serializedVersion: 2
-      Hash: af3177d86c45525b19a2309d1a88effb
+      Hash: 02d81a6f97de1ab944ae892ad122bb3b
     assemblyName: Assembly-CSharp.dll
     namespaceName: PIXEL.Landlords.AI
     className: FSM
@@ -1009,6 +1086,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PIXEL.Landlords.Animation.SpecialCardAnimations
+    className: SpecialCardCombinationsAnimations
   - hash:
       serializedVersion: 2
       Hash: e8723e80db263ec84433b4ea28bc8d43
@@ -1149,9 +1232,9 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d835e37be8caf473a0d64dc941f2a2a8
     assemblyName: Assembly-CSharp.dll
-    namespaceName: PIXEL.Landlords.Sets
+    namespaceName: PIXEL.Landlords.Sets.SystemSets
     className: SettingsManager
   - hash:
       serializedVersion: 2
@@ -1179,12 +1262,6 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 7072231382eb3c4871b3dd75ad0227e1
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1201,10 +1278,16 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PIXEL.Landlords.Sets.PlayerInformatioSets
+    className: PlayerInforPanelManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenuScene.unity
   - Assets/Scenes/Scene_ClassicsMode.unity
   - Assets/Scenes/Scene_LevelMode.unity
   - Assets/Scenes/Scene_DevelopMode.unity
-  playerPath: C:/Users/Administrator/Desktop/Landlords/Landlords.exe
+  playerPath: C:/Users/Administrator/Desktop/NewTest/Landlords.exe

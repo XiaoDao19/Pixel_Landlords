@@ -61,11 +61,14 @@ namespace PIXEL.Landlords.Game
 
         [Header("音效播放器")]
         private AudioSource playerAudioSource;
+        private AudioSource generalAudioSource;
 
         [Header("卡牌回收父物体")]
         private GameObject cardsRecycleBin;
         private void Start()
         {
+            generalAudioSource = DealCardManager.Instance.playerHand.parent.GetComponent<AudioSource>();
+
             //获取玩家音效播放器
             playerAudioSource = DealCardManager.Instance.playerHand.gameObject.GetComponent<AudioSource>();
 
@@ -203,7 +206,7 @@ namespace PIXEL.Landlords.Game
                     DealCardManager.Instance.playerHandCards.Remove(playerPlayCardList[i]);
                 }
 
-                AudioManager.PlayCard(playerAudioSource);
+                AudioManager.PlayCard(generalAudioSource);
                 AudioManager.ManPlayCard(playerAudioSource, playerPlayCardList);
                 DetectLastOneCard();
                 SpecialCardCombinationsAnimations.Instance.ShowAnimations("Player", PlayCardTypeJudgmentManager.PlayCardTypeJudge(playerPlayCardList));
@@ -235,7 +238,7 @@ namespace PIXEL.Landlords.Game
                     DealCardManager.Instance.playerHandCards.Remove(playerPlayCardList[i]);
                 }
 
-                AudioManager.PlayCard(playerAudioSource);
+                AudioManager.PlayCard(generalAudioSource);
                 AudioManager.ManPlayCard(playerAudioSource, playerPlayCardList);
                 DetectLastOneCard();
                 SpecialCardCombinationsAnimations.Instance.ShowAnimations("Player", PlayCardTypeJudgmentManager.PlayCardTypeJudge(playerPlayCardList));
