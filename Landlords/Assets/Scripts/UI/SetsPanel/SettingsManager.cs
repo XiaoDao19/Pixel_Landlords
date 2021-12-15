@@ -27,9 +27,6 @@ namespace PIXEL.Landlords.Sets.SystemSets
             slider_Music = transform.GetChild(1).GetChild(2).GetChild(1).GetComponent<Slider>();
             slider_AudioEffect = transform.GetChild(1).GetChild(3).GetChild(1).GetComponent<Slider>();
 
-            //初始设置全屏
-            Screen.fullScreen = true;
-
             windowsModeToggle.onValueChanged.AddListener((bool valueChange) => { WindownsToggle(valueChange); });
 
             slider_Music.onValueChanged.AddListener((float value) => { BackGroundMusicValueContorl(value); });
@@ -38,11 +35,17 @@ namespace PIXEL.Landlords.Sets.SystemSets
             //设置mixer的声音以及对应的slider的value值
             if (AudioMixerValue.BackMusicValue >= -80f && AudioMixerValue.BackMusicValue <= 20f)
             {
+                float temp = 0f;
+                audioMixer.GetFloat("MusicValue",out temp);
+                AudioMixerValue.BackMusicValue = temp;
                 slider_Music.value = AudioMixerValue.BackMusicValue;
             }
 
             if (AudioMixerValue.AudioEffectValue >= -80f && AudioMixerValue.AudioEffectValue <= 20f)
             {
+                float temp = 0f;
+                audioMixer.GetFloat("AudioEffectValue", out temp);
+                AudioMixerValue.AudioEffectValue = temp;
                 slider_AudioEffect.value = AudioMixerValue.AudioEffectValue;
             }
         }

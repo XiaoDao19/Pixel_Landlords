@@ -23,6 +23,7 @@ namespace PIXEL.Landlords.MainMenu
         [Header("功能按钮")]
         private Button button_SettingsButton;
         private Button button_PlayerInformationsSetsButton;
+        private Button button_Quit;
 
         [Header("Panels")]
         private GameObject tipPanel;
@@ -56,7 +57,7 @@ namespace PIXEL.Landlords.MainMenu
 
             button_SettingsButton = gameObject.transform.GetChild(4).GetComponent<Button>();
             button_PlayerInformationsSetsButton = gameObject.transform.GetChild(5).GetComponent<Button>();
-
+            button_Quit = gameObject.transform.GetChild(6).GetComponent<Button>();
 
             tipPanel = GameObject.Find("TipPanel");
             bossModeTipPanel = tipPanel.transform.GetChild(0).gameObject;
@@ -88,6 +89,8 @@ namespace PIXEL.Landlords.MainMenu
             button_PlayerInformationsSetsButton.onClick.AddListener(delegate { ShowPlayerInformationSetPanelAnima(); });
             PlayerInformationsSetsPanel_closeButton.onClick.AddListener(delegate { HidePlayerInformationSetPanelAnima(); });
 
+            button_Quit.onClick.AddListener(delegate { QuitGame(); });
+
             if (PlayerPrefs.GetString("SceneName") != SceneManager.GetActiveScene().name)
             {
                 UIAnimations.SceneTransition_In(transitionPanel_First,transitionPanel_Second,transitionPanel_Third);
@@ -96,6 +99,8 @@ namespace PIXEL.Landlords.MainMenu
             mainPanelColor = gameObject.GetComponent<Image>();
 
             StartCoroutine(MainPanelChange());
+
+            Screen.fullScreen = true;
         }
 
         private void FixedUpdate()
@@ -231,6 +236,11 @@ namespace PIXEL.Landlords.MainMenu
         }
 
         #endregion
+
+        private void QuitGame() 
+        {
+            Application.Quit(0);
+        }
 
         private IEnumerator MainPanelChange()
         {

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using PIXEL.Landlords.UI;
 using System.IO;
+using PIXEL.Landlords.AI;
 
 namespace PIXEL.Landlords.Game.LevelMode
 {
@@ -74,7 +75,8 @@ namespace PIXEL.Landlords.Game.LevelMode
         {
             if (DealCardManager.Instance.playerHand.childCount == 0)
             {
-                Time.timeScale = 0;
+                DealCardManager.Instance.aiNo1Hand.gameObject.GetComponent<FSM>().enabled = false;
+                DealCardManager.Instance.aiNo2Hand.gameObject.GetComponent<FSM>().enabled = false;
 
                 if (levelIsUp == false)
                 {
@@ -86,7 +88,6 @@ namespace PIXEL.Landlords.Game.LevelMode
             }
             else
             {
-                Time.timeScale = 1;
                 WinPanel.SetActive(false);
             }
         }

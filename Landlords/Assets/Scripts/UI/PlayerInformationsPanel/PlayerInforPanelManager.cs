@@ -61,8 +61,7 @@ namespace PIXEL.Landlords.Sets.PlayerInformatioSets
             icon_player_IconImage.texture = www.texture;
             icon_player_IconImage.SetNativeSize();
             icon_player_IconImage.GetComponent<RectTransform>().sizeDelta = new Vector2(icon_iconSizeX, icon_iconSizeY);
-            
-            
+            www.Dispose();       
         }
         #endregion
 

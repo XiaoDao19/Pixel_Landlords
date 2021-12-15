@@ -722,6 +722,7 @@ MonoBehaviour:
   temp_AI_First_Hand: []
   aiNo1AudioPlayer: {fileID: 0}
   aiNo2AudioPlayer: {fileID: 0}
+  generalAudioSource: {fileID: 0}
 --- !u!114 &194287560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2942,6 +2943,7 @@ MonoBehaviour:
   temp_AI_First_Hand: []
   aiNo1AudioPlayer: {fileID: 0}
   aiNo2AudioPlayer: {fileID: 0}
+  generalAudioSource: {fileID: 0}
 --- !u!114 &984877688
 MonoBehaviour:
   m_ObjectHideFlags: 0

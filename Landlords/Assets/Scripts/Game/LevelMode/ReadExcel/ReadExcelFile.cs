@@ -50,6 +50,9 @@ namespace PIXEL.Landlords.Game.LevelMode
             _columnCounts = dataSet.Tables[0].Columns.Count;
             _rowCounts = dataSet.Tables[0].Rows.Count;
 
+            fileStream.Close();
+            fileStream.Dispose();
+
             //返回第一张表的所有行的信息
             return dataSet.Tables[0].Rows;
         }
