@@ -1284,4 +1284,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Scene_ClassicsMode.unity
   - Assets/Scenes/Scene_LevelMode.unity
   - Assets/Scenes/Scene_DevelopMode.unity
-  playerPath: C:/Users/Administrator/Desktop/test/Landlords.exe
+  playerPath: C:/Users/Administrator/Desktop/Landlords_Version_2.3/Landlords.exe

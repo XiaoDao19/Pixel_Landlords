@@ -262,20 +262,6 @@ namespace PIXEL.Landlords.AI
                 }
             }
 
-            //if (RoundJudgmentManager.Instance.currentRoundCardType == PlayCardType.None)
-            //{
-            //    fSM.Judge_OutCard();
-
-            //    for (int i = fSM.temp_AI_First_Hand.Count - 1; i >= 0; i--)
-            //    {
-            //        fSM.currentTurnAIPlayCard.Add(fSM.temp_AI_First_Hand[i]);
-            //    }
-
-            //    fSM.temp_AI_First_Hand.Clear();
-
-            //    fSM.ReClassify();
-            //}
-
             if (RoundJudgmentManager.Instance.currentRoundCardType == PlayCardType.Single)
             {
                 fSM.currentTurnAIPlayCard = fSM.CurrentTurn_Single(fSM.currentTurnCardPoints);

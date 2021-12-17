@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using PIXEL.Landlords.UI;
 using System.IO;
 using PIXEL.Landlords.AI;
+using PIXEL.Landlords.Audio;
 
 namespace PIXEL.Landlords.Game.LevelMode
 {
@@ -26,9 +27,11 @@ namespace PIXEL.Landlords.Game.LevelMode
 
         [Header("LevelModePanel")]
         private GameObject levelModePanel;
-        private GameObject WinPanel;
+        private GameObject winPanel;
         private Text titleText;
         private Button button_Next;
+        private GameObject losePanel;
+        private Button button_Restart;
         public static int levelNumber = 1;
 
         [Header("UIAnimations")]
@@ -37,6 +40,8 @@ namespace PIXEL.Landlords.Game.LevelMode
         private static GameObject transitionPanel_Third;
 
         private bool levelIsUp;
+        private AudioSource bgmAudioSource;
+        private bool isPlayed;
         private void Start()
         {
             levelExcelTablePath = Application.streamingAssetsPath + "/ExcelFiles" + "/Landlords_Level" + ".xlsx";//一定要加后缀.xlsx，因为他只能读取这个格式的Excel文件
@@ -47,14 +52,20 @@ namespace PIXEL.Landlords.Game.LevelMode
             transitionPanel_Third = GameObject.Find("UIAnimation_Third");
 
             levelModePanel = gameObject;
-            WinPanel = levelModePanel.transform.GetChild(0).gameObject;
-            titleText = WinPanel.transform.GetChild(0).GetComponent<Text>();
-            button_Next = WinPanel.transform.GetChild(1).GetComponent<Button>();
-            
+            winPanel = levelModePanel.transform.GetChild(0).gameObject;
+            titleText = winPanel.transform.GetChild(0).GetComponent<Text>();
+            button_Next = winPanel.transform.GetChild(1).GetComponent<Button>();
+
+            losePanel = levelModePanel.transform.GetChild(1).gameObject;
+            button_Restart = losePanel.transform.GetChild(1).GetComponent<Button>();
+            button_Restart.onClick.AddListener(delegate { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); });
+
+            bgmAudioSource = GameObject.Find("BackGroundMusic").GetComponent<AudioSource>();
+
             button_Next.onClick.AddListener(() =>
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                WinPanel.SetActive(!WinPanel.activeSelf);
+                winPanel.SetActive(!winPanel.activeSelf);
             });
 
             UIAnimations.SceneTransition_In(transitionPanel_First, transitionPanel_Second, transitionPanel_Third);
@@ -83,12 +94,34 @@ namespace PIXEL.Landlords.Game.LevelMode
                     levelNumber++;//just test
                     levelIsUp = true;
                 }
+                winPanel.SetActive(true);
 
-                WinPanel.SetActive(true);
+                if (isPlayed == false)
+                {
+                    bgmAudioSource.clip = null;
+                    bgmAudioSource.loop = false;
+                    AudioManager.Win(bgmAudioSource);
+                    isPlayed = true;
+                }
             }
             else
             {
-                WinPanel.SetActive(false);
+                winPanel.SetActive(false);
+            }
+
+            if (DealCardManager.Instance.aiNo1Hand.childCount == 0 || DealCardManager.Instance.aiNo2Hand.childCount == 0)
+            {
+                DealCardManager.Instance.aiNo1Hand.gameObject.GetComponent<FSM>().enabled = false;
+                DealCardManager.Instance.aiNo2Hand.gameObject.GetComponent<FSM>().enabled = false;
+                losePanel.SetActive(true);
+
+                if (isPlayed == false)
+                {
+                    bgmAudioSource.clip = null;
+                    bgmAudioSource.loop = false;
+                    AudioManager.Lose(bgmAudioSource);
+                    isPlayed = true;
+                }
             }
         }
 

@@ -12,6 +12,9 @@ namespace PIXEL.Landlords.Audio
         [Header("音效声音大小")]
         private static float audioEffectValue;
 
+        [Header("窗口模式"), Tooltip("临时添加的，因为忘记存这个值了")]
+        private static bool isWindowsMode = false;
+
         public static float BackMusicValue
         {
             get => backMusicValue;
@@ -29,6 +32,16 @@ namespace PIXEL.Landlords.Audio
             set
             {
                 audioEffectValue = value;
+            }
+        }
+
+        public static bool WindowsMode 
+        {
+            get => isWindowsMode;
+
+            set 
+            {
+                isWindowsMode = value;
             }
         }
     }

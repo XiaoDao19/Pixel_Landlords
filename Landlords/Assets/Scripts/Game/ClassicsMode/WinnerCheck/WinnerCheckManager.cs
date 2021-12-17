@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using PIXEL.Landlords.Card;
 using PIXEL.Landlords.UI;
 using PIXEL.Landlords.AI;
+using PIXEL.Landlords.Audio;
 
 namespace PIXEL.Landlords.Game
 {
@@ -22,6 +23,8 @@ namespace PIXEL.Landlords.Game
         private static GameObject transitionPanel_Second;
         private static GameObject transitionPanel_Third;
 
+        private AudioSource bgmAudioSource;
+        private bool isPlayed;
         void Start()
         {
             Time.timeScale = 1f;
@@ -30,6 +33,8 @@ namespace PIXEL.Landlords.Game
             tipText = accountPanel.transform.GetChild(0).GetComponent<Text>();
             button_Back = accountPanel.transform.GetChild(1).GetComponent<Button>();
             button_Quit = accountPanel.transform.GetChild(2).GetComponent<Button>();
+
+            bgmAudioSource = GameObject.Find("BackGroundMusic").GetComponent<AudioSource>();
 
             button_Back.onClick.AddListener(() => { BackMenu(); });
             button_Quit.onClick.AddListener(() => { Quit(); });
@@ -52,6 +57,15 @@ namespace PIXEL.Landlords.Game
             if (DealCardManager.Instance.playerHand.childCount == 0)
             {
                 accountPanel.SetActive(true);
+
+                if (isPlayed == false)
+                {
+                    bgmAudioSource.clip = null;
+                    bgmAudioSource.loop = false;
+                    AudioManager.Win(bgmAudioSource);
+                    isPlayed = true;
+                }
+
                 tipText.text = "胜利";
                 tipText.color = Color.red;
 
@@ -74,6 +88,15 @@ namespace PIXEL.Landlords.Game
             if (DealCardManager.Instance.aiNo1Hand.childCount == 0)
             {
                 accountPanel.SetActive(true);
+
+                if (isPlayed == false)
+                {
+                    bgmAudioSource.clip = null;
+                    bgmAudioSource.loop = false;
+                    AudioManager.Lose(bgmAudioSource);
+                    isPlayed = true;
+                }
+
                 tipText.text = "失败";
 
                 for (int i = 0; i < DealCardManager.Instance.aiNo2Hand.childCount; i++)
@@ -90,6 +113,15 @@ namespace PIXEL.Landlords.Game
             if (DealCardManager.Instance.aiNo2Hand.childCount == 0)
             {
                 accountPanel.SetActive(true);
+
+                if (isPlayed == false)
+                {
+                    bgmAudioSource.clip = null;
+                    bgmAudioSource.loop = false;
+                    AudioManager.Lose(bgmAudioSource);
+                    isPlayed = true;
+                }
+
                 tipText.text = "失败";
 
                 for (int i = 0; i < DealCardManager.Instance.aiNo1Hand.childCount; i++)

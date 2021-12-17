@@ -19,7 +19,7 @@ namespace PIXEL.Landlords.Audio
 
             //int tempAudio = Random.Range(0, 2);
 
-            ////如果随机数0，则播放男人的“大你”音效片段，反之播放相应的牌型音频
+            //如果随机数0，则播放男人的“大你”音效片段，反之播放相应的牌型音频
             //if (tempAudio == 0)
             //{
             //    _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Bigger);
@@ -29,67 +29,106 @@ namespace PIXEL.Landlords.Audio
             //如果当前出牌类型为单牌，则判断音频库中，男人的单牌音频的对应音频，并播放
             if (currentCardType == PlayCardType.Single)
             {
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 203 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 303 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 403)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_3);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 204 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 304 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 404)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_4);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 205 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 305 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 405)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_5);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 206 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 306 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 406)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_6);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 207 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 307 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 407)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_7);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 208 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 308 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 408)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_8);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 209 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 309 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 409)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_9);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 210 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 310 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 410)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_10);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 211 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 311 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 411)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_J);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 212 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 312 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 412)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_Q);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 213 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 313 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 413)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_K);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 214 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 314 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 414)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_A);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 219 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 319 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 419)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Single_2);
                 }
@@ -108,67 +147,106 @@ namespace PIXEL.Landlords.Audio
             //理同上
             if (currentCardType == PlayCardType.Pair)
             {
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 203 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 303 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 403)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_3);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 204 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 304 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 404)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_4);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 205 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 305 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 405)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_5);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 206 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 306 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 406)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_6);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 207 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 307 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 407)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_7);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 208 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 308 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 408)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_8);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 209 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 309 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 409)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_9);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 210 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 310 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 410)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_10);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 211 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 311 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 411)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_J);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 212 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 312 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 412)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_Q);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 213 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 313 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 413)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_K);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 214 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 314 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 414)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_A);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 219 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 319 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 419)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Pair_2);
                 }
@@ -177,67 +255,106 @@ namespace PIXEL.Landlords.Audio
             //理同上
             if (currentCardType == PlayCardType.Triple)
             {
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 203 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 303 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 403)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_3);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 204 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 304 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 404)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_4);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 205 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 305 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 405)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_5);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 206 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 306 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 406)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_6);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 207 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 307 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 407)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_7);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 208 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 308 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 408)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_8);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 209 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 309 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 409)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_9);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 210 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 310 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 410)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_10);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 211 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 311 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 411)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_J);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 212 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 312 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 412)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_Q);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 213 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 313 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 413)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_K);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 214 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 314 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 414)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_A);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 219 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 319 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 419)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.man_Triple_2);
                 }
@@ -344,77 +461,116 @@ namespace PIXEL.Landlords.Audio
             //如果当前出牌类型为单牌，则判断音频库中，男人的单牌音频的对应音频，并播放
             if (currentCardType == PlayCardType.Single)
             {
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 203 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 303 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 403)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_3);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 204 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 304 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 404)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_4);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 205 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 305 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 405)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_5);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 206 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 306 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 406)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_6);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 207 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 307 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 407)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_7);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 208 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 308 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 408)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_8);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 209 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 309 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 409)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_9);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 210 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 310 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 410)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_10);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 211 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 311 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 411)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_J);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 212 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 312 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 412)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_Q);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 213 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 313 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 413)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_K);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 214 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 314 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 414)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_A);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 219 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 319 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 419)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_2);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 519)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 519 )
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_SmallJoker);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 520)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 520 )
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Single_BigJoker);
                 }
@@ -423,67 +579,106 @@ namespace PIXEL.Landlords.Audio
             //理同上
             if (currentCardType == PlayCardType.Pair)
             {
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 203 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 303 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 403)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_3);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 204 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 304 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 404)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_4);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 205 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 305 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 405)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_5);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 206 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 306 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 406)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_6);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 207 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 307 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 407)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_7);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 208 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 308 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 408)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_8);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 209 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 309 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 409)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_9);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 210 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 310 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 410)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_10);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 211 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 311 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 411)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_J);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 212 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 312 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 412)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_Q);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 213 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 313 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 413)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_K);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 214 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 314 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 414)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_A);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 219 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 319 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 419)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Pair_2);
                 }
@@ -492,67 +687,106 @@ namespace PIXEL.Landlords.Audio
             //理同上
             if (currentCardType == PlayCardType.Triple)
             {
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 103 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 203 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 303 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 403)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_3);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 104 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 204 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 304 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 404)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_4);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 105 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 205 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 305 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 405)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_5);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 106 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 206 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 306 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 406)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_6);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 107 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 207 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 307 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 407)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_7);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 108 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 208 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 308 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 408)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_8);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 109 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 209 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 309 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 409)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_9);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 110 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 210 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 310 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 410)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_10);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 111 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 211 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 311 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 411)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_J);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 112 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 212 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 312 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 412)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_Q);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 113 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 213 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 313 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 413)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_K);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 114 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 214 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 314 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 414)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_A);
                 }
 
-                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119)
+                if (_currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 119 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 219 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 319 ||
+                    _currentPlayCardCombination[0].GetComponent<CardInformations>().IndexNumber == 419)
                 {
                     _currentAudioPlayer.PlayOneShot(AudioClipsGit.woman_Triple_2);
                 }

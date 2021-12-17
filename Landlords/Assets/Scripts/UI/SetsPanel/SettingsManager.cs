@@ -48,6 +48,8 @@ namespace PIXEL.Landlords.Sets.SystemSets
                 AudioMixerValue.AudioEffectValue = temp;
                 slider_AudioEffect.value = AudioMixerValue.AudioEffectValue;
             }
+
+            windowsModeToggle.isOn = AudioMixerValue.WindowsMode;
         }
 
         //设置全屏或非全屏模式
@@ -57,11 +59,15 @@ namespace PIXEL.Landlords.Sets.SystemSets
             {
                 //1920，1080分辨率，不全屏
                 Screen.SetResolution(1920, 1080, false);
+
+                AudioMixerValue.WindowsMode = _toggleValue;
             }
             else
             {
                 //1920，1080分辨率，全屏
                 Screen.SetResolution(1920, 1080, true);
+
+                AudioMixerValue.WindowsMode = _toggleValue;
             }
         }
 
